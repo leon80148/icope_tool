@@ -1,0 +1,17 @@
+# 執行期依賴（版本鎖定）。
+# ddddocr 在 Windows 的套件宣告會拉進非 headless 的 opencv-python（內含 GUI 元件、與 headless 版共用 cv2 目錄互相覆蓋），
+# 所以 ddddocr 另外用 --no-deps 安裝：
+#   pip install -r requirements.txt
+#   pip install --no-deps ddddocr==1.6.1
+PySide6==6.11.2
+requests==2.34.2
+beautifulsoup4==4.15.0
+numpy==2.4.6
+Pillow==12.3.0
+onnxruntime==1.30.0
+opencv-python-headless==5.0.0.93
+fpdf2==2.8.8
+pypdf==6.19.0
+openpyxl==3.1.5
+pyscard==2.3.1
+pydantic==2.13.5

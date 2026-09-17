@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<!-- 去識別化 fixture：session 過期時 GET 查詢頁被導回登入頁的樣子（無 Lmsg1、有登入 modal）。 -->
+<html>
+<head><title>成人預防保健 暨慢性疾病防治資訊系統</title></head>
+<body>
+  <div id="loginModal">
+    <input type="text" id="username" placeholder="使用者帳號" />
+    <input type="password" id="password" placeholder="密碼" />
+    <input type="text" id="code" placeholder="請輸入以下驗證碼" />
+    <img id="IMGValidate" src="ValidateCode.aspx?t=1" />
+    <button onclick="Login();return false;">登入</button>
+  </div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<!-- 去識別化 fixture：登入成功但直接進查詢頁時被導回的 Default.aspx 首頁（最新消息）。
+     已登入（無 #username 登入框），但沒有查詢表單（無 #ContentPlaceHolder1_TBPID）。 -->
+<html lang="zh-Hant">
+<head><title>最新消息</title></head>
+<body>
+  <a href="/logout.aspx">登出</a>
+  <form method="post" action="./Default.aspx" id="form1">
+    <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="ZmFrZS1ob21l" />
+    <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="ZmFrZS1ob21l" />
+    <input type="hidden" name="ctl00$HFcsrf" id="HFcsrf" value="fake-csrf" />
+    <div class="news">最新消息內容…</div>
+  </form>
+</body>
+</html>

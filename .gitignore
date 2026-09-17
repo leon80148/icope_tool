@@ -1,0 +1,31 @@
+# 執行期資料（含 hpdcs 帳密與登入 cookie，絕不可入版控）
+data/
+*.local.json
+
+# Python
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+.pytest_cache/
+*.egg-info/
+
+# 打包產物
+build/
+dist/
+
+# 院所自己的設定包來源與成品（常含聯絡人姓名、手機與院所自製單張；用 tools/make_clinic_pack.py 產生）
+packs/
+
+# UI 審查截圖的暫存（正式紀錄在 docs/ui-review/）
+tools/_snapshots_tmp/
+
+# 編輯器 / OS
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
+
+# UI 審查的截圖與討論原文：只留在本機（用 tools/ui_snapshots.py 可以重新產生）；文字紀錄在 docs/ui-review/SCORES.md
+docs/ui-review/round-*/
+docs/ui-review/final/

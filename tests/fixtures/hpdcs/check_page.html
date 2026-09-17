@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!-- 去識別化 fixture：EF2_CheckIDExist.aspx 的 GET 回應（查詢前）。
+     VIEWSTATE 等值皆為假資料，僅測試 hidden 欄位擷取與 POST 組裝。 -->
+<html>
+<head><title>新版長者功能評估身分證檢核</title></head>
+<body>
+  <form method="post" action="./EF2_CheckIDExist.aspx" id="form1">
+    <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+    <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+    <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="ZmFrZS12aWV3c3RhdGUtdmFsdWU=" />
+    <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="ABCD1234" />
+    <input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+    <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="ZmFrZS1ldmVudHZhbGlkYXRpb24=" />
+    <input type="hidden" name="ctl00$HFcsrf" id="HFcsrf" value="fake-csrf-token" />
+    <input type="hidden" name="ctl00$ContentPlaceHolder1$HFPID" id="ContentPlaceHolder1_HFPID" value="" />
+    <input type="hidden" name="ctl00$ContentPlaceHolder1$HFOrgCode" id="ContentPlaceHolder1_HFOrgCode" value="" />
+
+    <div class="basic">
+      <span>身分證統一編號：</span>
+      <input name="ctl00$ContentPlaceHolder1$TBPID" type="text" maxlength="10" id="ContentPlaceHolder1_TBPID" />
+      <input type="submit" name="ctl00$ContentPlaceHolder1$BtnCheck" value="檢查" id="ContentPlaceHolder1_BtnCheck" />
+    </div>
+
+    <span id="ContentPlaceHolder1_Lmsg1"></span>
+    <span id="ContentPlaceHolder1_Lmsg2"></span>
+  </form>
+</body>
+</html>

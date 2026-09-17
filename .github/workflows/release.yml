@@ -1,0 +1,77 @@
+name: release
+
+# 推 v 開頭的 tag（例如 v1.1.0）就會：跑測試、打包、對打包好的 exe 做自我檢測，全部通過才發佈到 Releases。
+# 手動執行（Actions › release › Run workflow）只做前三件事並把 zip 留成工作產物，不發佈：用來在打 tag 前試跑。
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: windows-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # 先做這一步：tag 和程式版本不一致、或 CHANGELOG.md 沒有這一版，就不必花十幾分鐘打包
+      - name: Check the tag against the version and collect the release notes
+        if: startsWith(github.ref, 'refs/tags/')
+        shell: pwsh
+        run: python tools\release_notes.py $env:GITHUB_REF_NAME notes.md
+
+      - name: Build (tests + PyInstaller + zip)
+        shell: pwsh
+        run: |
+          python -m venv venv
+          powershell -ExecutionPolicy Bypass -File packaging\build_windows.ps1
+
+      - name: Self-test the frozen build
+        shell: pwsh
+        run: |
+          dist\IcopeTool\IcopeTool.exe --self-test selftest | Out-Null
+          $report = Get-Content selftest\report.json -Raw | ConvertFrom-Json
+          # 建置機沒有讀卡機服務，讀卡檢查不列入
+          $failed = $report.checks.PSObject.Properties | Where-Object { -not $_.Value.ok -and $_.Name -ne 'card_reader_pyscard' }
+          if ($failed) { $failed | ForEach-Object { Write-Error "$($_.Name): $($_.Value.detail)" }; exit 1 }
+
+      - name: Checksum
+        id: package
+        shell: pwsh
+        run: |
+          $zip = Get-ChildItem dist\IcopeTool-*-win64.zip | Select-Object -First 1
+          $hash = (Get-FileHash $zip.FullName -Algorithm SHA256).Hash.ToLower()
+          "$hash  $($zip.Name)" | Out-File -Encoding ascii "$($zip.FullName).sha256"
+          "zip=$($zip.FullName)" | Out-File -Encoding utf8 -Append $env:GITHUB_OUTPUT
+          "sha256=$hash" | Out-File -Encoding utf8 -Append $env:GITHUB_OUTPUT
+
+      - name: Keep the package (trial run only)
+        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: IcopeTool-trial-build
+          path: |
+            dist/IcopeTool-*-win64.zip
+            dist/IcopeTool-*-win64.zip.sha256
+            selftest/report.json
+          retention-days: 7
+
+      - name: Publish GitHub Release
+        if: startsWith(github.ref, 'refs/tags/')
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ZIP: ${{ steps.package.outputs.zip }}
+          SHA256: ${{ steps.package.outputs.sha256 }}
+        run: |
+          $name = Split-Path $env:ZIP -Leaf
+          $tail = "`n### 下載與安裝`n`n下載 ``$name``，解壓縮到可以寫入的資料夾（例如 ``D:\IcopeTool\``），雙擊 ``IcopeTool.exe``。步驟見 [安裝說明](https://github.com/$env:GITHUB_REPOSITORY/blob/$env:GITHUB_REF_NAME/docs/INSTALL.md)，操作見 [圖文教學](https://github.com/$env:GITHUB_REPOSITORY/blob/$env:GITHUB_REF_NAME/docs/GUIDE.md)。`n`nSHA-256：``$env:SHA256```n"
+          Add-Content -Path notes.md -Value $tail -Encoding utf8
+          gh release create $env:GITHUB_REF_NAME $env:ZIP "$($env:ZIP).sha256" --title "ICOPE 小幫手 $env:GITHUB_REF_NAME" --notes-file notes.md --verify-tag

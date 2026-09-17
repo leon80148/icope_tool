@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<!-- 去識別化 fixture：已被「其它計畫」登錄（今年已在另一計畫做過，此計畫無法再做）。 -->
+<html>
+<head><title>新版長者功能評估身分證檢核</title></head>
+<body>
+  <form method="post" action="./EF2_CheckIDExist.aspx" id="form1">
+    <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="ZmFrZTQ=" />
+    <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="ZmFrZTQ=" />
+    <input type="hidden" name="ctl00$HFcsrf" id="HFcsrf" value="fake-csrf-token" />
+    <input name="ctl00$ContentPlaceHolder1$TBPID" type="text" maxlength="10" id="ContentPlaceHolder1_TBPID" value="A123456789" />
+    <input type="submit" name="ctl00$ContentPlaceHolder1$BtnCheck" value="檢查" id="ContentPlaceHolder1_BtnCheck" />
+    <span id="ContentPlaceHolder1_Lmsg1"><b>今年無法繼續評估：<font color="blue">X，該身分證已被其它計畫登錄！</font></b></span>
+    <span id="ContentPlaceHolder1_Lmsg2"></span>
+  </form>
+</body>
+</html>

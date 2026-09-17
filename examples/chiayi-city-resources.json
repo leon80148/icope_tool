@@ -1,0 +1,5080 @@
+{
+  "format": "icope-tool-pack",
+  "version": 1,
+  "exported_at": "2026-09-17T00:00:00",
+  "app_version": "example",
+  "resources": [
+    {
+      "domains": [
+        "social"
+      ],
+      "id": "4a375602a547",
+      "name": "嘉義市長青綜合服務中心-長青園",
+      "type": "長青綜合服務",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2763636"
+      ],
+      "hours": "",
+      "address": "嘉義市東區短竹里公義路1號",
+      "website": "https://www.facebook.com/profile.php?id=100064861141225",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive",
+        "social"
+      ],
+      "id": "12deec8316bc",
+      "name": "嘉義市東區樂齡學習中心(長青園內)",
+      "type": "樂齡學習中心",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2763636"
+      ],
+      "hours": "",
+      "address": "嘉義市東區短竹里公義路1號",
+      "website": "https://www.facebook.com/ChiayiEastElderLearning",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive",
+        "social"
+      ],
+      "id": "04f4c038c964",
+      "name": "嘉義市西區樂齡學習中心",
+      "type": "樂齡學習中心",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2325982"
+      ],
+      "hours": "",
+      "address": "嘉義市西區博愛路二段241號",
+      "website": "https://www.facebook.com/boaicu/",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "mobility"
+      ],
+      "id": "cfaa111ef519",
+      "name": "嘉義市東區國民運動中心",
+      "type": "國民運動中心",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2165788"
+      ],
+      "hours": "",
+      "address": "嘉義市東區彌陀路327巷15號",
+      "website": "https://www.tmcysports.com.tw/ https://www.facebook.com/tmcysports",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "mobility"
+      ],
+      "id": "0865cc60e96d",
+      "name": "長青園銀髮健身俱樂部",
+      "type": "銀髮健身俱樂部",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2763636 #111"
+      ],
+      "hours": "",
+      "address": "嘉義市東區短竹里公義路1號",
+      "website": "https://www.facebook.com/profile.php?id=100064861141225",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "mobility"
+      ],
+      "id": "df089259965d",
+      "name": "精忠健康有力站",
+      "type": "銀髮健身俱樂部",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "0933-360-550"
+      ],
+      "hours": "",
+      "address": "嘉義市東區林森東路722-11號1樓",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "mobility"
+      ],
+      "id": "6fa77223f366",
+      "name": "嘉創健促加油站",
+      "type": "銀髮健身俱樂部",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "0972-368-169"
+      ],
+      "hours": "",
+      "address": "嘉義市西區博愛路二段569號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "mobility"
+      ],
+      "id": "991ece20be67",
+      "name": "嘉義市國民運動中心",
+      "type": "銀髮健身俱樂部",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2165788 #411"
+      ],
+      "hours": "",
+      "address": "嘉義市東區彌陀路327巷15號 1樓銀髮健身俱樂部教室",
+      "website": "https://www.facebook.com/tmcysports/?locale=zh_TW",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "mobility"
+      ],
+      "id": "8df1075cef71",
+      "name": "導明星光西門站",
+      "type": "銀髮健身俱樂部",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "0925-970-598"
+      ],
+      "hours": "",
+      "address": "嘉義市西區垂楊路309號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "mobility"
+      ],
+      "id": "65463f674d85",
+      "name": "不老活力中心嘉西館",
+      "type": "銀髮健身俱樂部",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-3103612 #22"
+      ],
+      "hours": "",
+      "address": "嘉義市西區友愛路241號",
+      "website": "https://www.facebook.com/bulaosportsclub/",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "nutrition"
+      ],
+      "id": "ab23617cf28f",
+      "name": "嘉義市政府衛生局社區營養推廣中心",
+      "type": "社區營養推廣中心",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2338066 #528"
+      ],
+      "hours": "",
+      "address": "嘉義市西區德明路1號",
+      "website": "https://www.facebook.com/chiayicitynutrition",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "nutrition"
+      ],
+      "id": "8adbc1dce41e",
+      "name": "喬登營養諮詢機構",
+      "type": "營養諮詢服務",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2243988"
+      ],
+      "hours": "",
+      "address": "嘉義市東區民族里民族路246號3樓",
+      "website": "https://www.facebook.com/Foodchat1985/",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "nutrition"
+      ],
+      "id": "7a5261984ff3",
+      "name": "雅禎營養諮詢機構",
+      "type": "營養諮詢服務",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2358869"
+      ],
+      "hours": "",
+      "address": "嘉義市西區西平里友忠路116號",
+      "website": "https://www.facebook.com/yazhen1030901?locale=zh_TW",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "nutrition"
+      ],
+      "id": "70e37c0d48e7",
+      "name": "友忠花甲食堂-嘉義市友忠長青協進會",
+      "type": "花甲食堂",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2337056"
+      ],
+      "hours": "",
+      "address": "友忠公園內-嘉義市友忠長青協進會歌唱班",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "nutrition"
+      ],
+      "id": "4f3679354106",
+      "name": "中庄花甲食堂-嘉義市東區中庄社區發展協會",
+      "type": "花甲食堂",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2763936"
+      ],
+      "hours": "",
+      "address": "嘉義市東區中庄里9鄰台斗街97-21號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "nutrition"
+      ],
+      "id": "80a721616733",
+      "name": "大齡花甲食堂-財團法人私立保康社會福 利慈善事業基金會",
+      "type": "花甲食堂",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2348836"
+      ],
+      "hours": "",
+      "address": "嘉義市東區新店里東義 路 22 號",
+      "website": "https://www.facebook.com/longdarling",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "nutrition"
+      ],
+      "id": "98c3ec79b4f5",
+      "name": "厚福花甲食堂-新動能社會工作師事務所",
+      "type": "花甲食堂",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "0911722701"
+      ],
+      "hours": "",
+      "address": "嘉義市東區後湖里保義路202巷5號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "nutrition"
+      ],
+      "id": "6fe0c026f2f5",
+      "name": "興安花甲食堂-嘉義市東區興安社區",
+      "type": "花甲食堂",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "0933683058"
+      ],
+      "hours": "",
+      "address": "嘉義市東區興美一街 21號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "nutrition"
+      ],
+      "id": "70321101e39e",
+      "name": "北湖花甲食堂-財團法人臺南市私立靜 觀社會福利慈善事業基金會",
+      "type": "花甲食堂",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "0915971502"
+      ],
+      "hours": "",
+      "address": "嘉義市北社尾路246巷35號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "nutrition"
+      ],
+      "id": "02e8cdbc7ce4",
+      "name": "興村花甲食堂-嘉義市東區興村社區發 展協會",
+      "type": "花甲食堂",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "0982799557"
+      ],
+      "hours": "",
+      "address": "嘉義市興村過溪133號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "depression"
+      ],
+      "id": "0e3710b8d17b",
+      "name": "國立嘉義大學家庭與社區諮商中心",
+      "type": "國立嘉義大學家庭與社區諮商中心",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05 2732439"
+      ],
+      "hours": "",
+      "address": "嘉義巿嘉義市東區林森東路151號",
+      "website": "https://www.facebook.com/family.community.counseling.center/?locale=zh_TW",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "depression"
+      ],
+      "id": "cd3635be0017",
+      "name": "嘉義市社區心理衛生中心",
+      "type": "社區心理衛生中心",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2255155"
+      ],
+      "hours": "",
+      "address": "嘉義市東區彌陀路255號",
+      "website": "https://www.facebook.com/warmheartpig/ https://mental.cichb.gov.tw:4434/",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "depression"
+      ],
+      "id": "542b484738e2",
+      "name": "凱心希望心理諮商所",
+      "type": "心理諮商所",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2350778"
+      ],
+      "hours": "",
+      "address": "嘉義市西區玉康路130號",
+      "website": "https://www.facebook.com/openandwish https://openwish.mystrikingly.com/",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "depression"
+      ],
+      "id": "3619a50c49cf",
+      "name": "心家藝心理諮商中心",
+      "type": "心理諮商所",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2910498"
+      ],
+      "hours": "",
+      "address": "嘉義市西區友竹街7號",
+      "website": "https://heartfamilyart.mystrikingly.com/",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "depression"
+      ],
+      "id": "03ea335d8240",
+      "name": "心言心理諮商所",
+      "type": "心理諮商所",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2350778"
+      ],
+      "hours": "",
+      "address": "嘉義市西區玉康路130號",
+      "website": "https://pse.is/53bzyx",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "depression"
+      ],
+      "id": "12d8e2a96776",
+      "name": "暖暖心理治療所",
+      "type": "心理治療所",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2757975"
+      ],
+      "hours": "",
+      "address": "嘉義市東區嘉工街51號",
+      "website": "https://nuan-nuan.co/#row02",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "depression"
+      ],
+      "id": "72853b227fc8",
+      "name": "欣明心理成長中心心理治療所",
+      "type": "心理治療所",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2787282"
+      ],
+      "hours": "",
+      "address": "嘉義市東區安和街234號",
+      "website": "https://www.xin-ming.org/ https://www.facebook.com/profile.php?id=100064154016994",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "depression"
+      ],
+      "id": "720185602edf",
+      "name": "祐晴心理成長中心心理治療所",
+      "type": "心理治療所",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2710955"
+      ],
+      "hours": "",
+      "address": "嘉義市東區嘉南街7號",
+      "website": "https://www.facebook.com/profile.php?id=100064125453899",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [],
+      "id": "fca51c2c1473",
+      "name": "嘉義市婦女福利服務中心",
+      "type": "婦女福利",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05 2340828"
+      ],
+      "hours": "",
+      "address": "嘉義市西區德安路６號",
+      "website": "https://www.facebook.com/ChiayiWomenCenter/?locale=zh_TW",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "social"
+      ],
+      "id": "e12cc81ebb49",
+      "name": "嘉義市東區社會福利服務中心",
+      "type": "社福中心",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2163370"
+      ],
+      "hours": "",
+      "address": "嘉義市東區興業東路555號",
+      "website": "https://www.facebook.com/ChiayiEastFamily/",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "social"
+      ],
+      "id": "bc8129841906",
+      "name": "嘉義市西區社會福利服務中心",
+      "type": "社福中心",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2231525"
+      ],
+      "hours": "",
+      "address": "嘉義市西區忠義街158-1號(中正公園內)",
+      "website": "https://www.facebook.com/ChiayiWestFamily/",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "depression"
+      ],
+      "id": "ff79f726fa67",
+      "name": "嘉義基督教醫院-好消息協談中心",
+      "type": "心理諮商中心",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2765041#8585"
+      ],
+      "hours": "",
+      "address": "嘉義市東區後湖里保建街100號7樓",
+      "website": "https://www.facebook.com/CYCHGBCC/",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "social"
+      ],
+      "id": "c708843c1ae8",
+      "name": "嘉義市生命線協會",
+      "type": "社福中心",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2835025"
+      ],
+      "hours": "",
+      "address": "嘉義市西區港坪里金山路269號",
+      "website": "https://reurl.cc/QZXgO0",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "social"
+      ],
+      "id": "82e4afd0d411",
+      "name": "嘉義張老師中心",
+      "type": "社福中心",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2770482"
+      ],
+      "hours": "",
+      "address": "嘉義市東區北門里忠孝路307號",
+      "website": "https://www.facebook.com/chiayi1980/?locale=zh_TW",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [],
+      "id": "7484a70b5b37",
+      "name": "美N共學堂",
+      "type": "社區各類課程學習",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2788225"
+      ],
+      "hours": "",
+      "address": "嘉義市東區華南里民國路195號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "depression",
+        "social"
+      ],
+      "id": "1effccb9052b",
+      "name": "神農社區發展協會",
+      "type": "社區關懷訪視",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "0912-790430"
+      ],
+      "hours": "",
+      "address": "嘉義市東區朝陽里朝陽街64號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "depression",
+        "social"
+      ],
+      "id": "bb6f09c0eaa5",
+      "name": "精忠社區發展協會",
+      "type": "社區關懷訪視",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2776068"
+      ],
+      "hours": "",
+      "address": "嘉義市東區圳頭里精忠一村1-6號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "depression",
+        "social"
+      ],
+      "id": "276e6ff77350",
+      "name": "嘉義市慈龍寺",
+      "type": "社區關懷訪視",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2774488"
+      ],
+      "hours": "",
+      "address": "嘉義市東區北門里長榮街206號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "depression",
+        "social"
+      ],
+      "id": "e52a8cae7db5",
+      "name": "嘉義市社區醫療發展協會",
+      "type": "社區關懷訪視",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2287688"
+      ],
+      "hours": "",
+      "address": "嘉義市東區芳安里宣信街157號",
+      "website": "https://www.facebook.com/profile.php?id=100070974942690",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "depression",
+        "social"
+      ],
+      "id": "60d87e562ef6",
+      "name": "太平社區發展協會",
+      "type": "社區關懷訪視",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2775585"
+      ],
+      "hours": "",
+      "address": "嘉義市東區太平里林森東路151號(嘉義大學CH401、CH402教室)",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "depression",
+        "social"
+      ],
+      "id": "102137c94920",
+      "name": "東川社區發展協會",
+      "type": "社區關懷訪視",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2769541"
+      ],
+      "hours": "",
+      "address": "嘉義市東區東川里公園街87號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "depression",
+        "social"
+      ],
+      "id": "20dc1a1d9fcb",
+      "name": "新店社區發展協會",
+      "type": "社區關懷訪視",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2771563"
+      ],
+      "hours": "",
+      "address": "嘉義市東區新店里林森東路269巷1弄135號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "depression",
+        "social"
+      ],
+      "id": "4985c8403132",
+      "name": "嘉義市真正好全人關顧協會",
+      "type": "社區關懷訪視",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2772077"
+      ],
+      "hours": "",
+      "address": "嘉義市東區王田里圓福街82號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "depression",
+        "social"
+      ],
+      "id": "a7587bf8ba98",
+      "name": "後湖社區發展協會",
+      "type": "社區關懷訪視",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "0935-214218"
+      ],
+      "hours": "",
+      "address": "嘉義市東區後湖里保義路60巷40號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "depression",
+        "social"
+      ],
+      "id": "647a161d8545",
+      "name": "興仁社區發展協會",
+      "type": "社區關懷訪視",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2399929"
+      ],
+      "hours": "",
+      "address": "嘉義市東區興仁里軍輝路47號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "depression",
+        "social"
+      ],
+      "id": "495ac2fa88ec",
+      "name": "新開社區發展協會",
+      "type": "社區關懷訪視",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2285077"
+      ],
+      "hours": "",
+      "address": "嘉義市東區新開里市宅街21巷19弄8號(嘉義天玄宮空地及守望相助亭)",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "depression",
+        "social"
+      ],
+      "id": "ef7e13444e42",
+      "name": "新厝社區發展協會",
+      "type": "社區關懷訪視",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "0932-880298"
+      ],
+      "hours": "",
+      "address": "嘉義市西區新厝里龍江街87號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "depression",
+        "social"
+      ],
+      "id": "1032382383c9",
+      "name": "臺南市私立靜觀社會福利慈善事業基金會嘉義分會-大溪",
+      "type": "社區關懷訪視",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "0915-971502"
+      ],
+      "hours": "",
+      "address": "嘉義市西區大溪里大溪路593-1號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "depression",
+        "social"
+      ],
+      "id": "c15011d5de15",
+      "name": "育英里辦公處",
+      "type": "社區關懷訪視",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2290166"
+      ],
+      "hours": "",
+      "address": "嘉義市西區育英里國華街52號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "depression",
+        "social"
+      ],
+      "id": "5fda639acae2",
+      "name": "鳳梨會社社區發展協會",
+      "type": "社區關懷訪視",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2850580"
+      ],
+      "hours": "",
+      "address": "嘉義市西區垂楊里建成街58巷73號、仁愛路293巷45號、47號、37號、35號及35號前廣場",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "depression",
+        "social"
+      ],
+      "id": "b5da8261dd91",
+      "name": "竹圍社區發展協會",
+      "type": "社區關懷訪視",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2330096"
+      ],
+      "hours": "",
+      "address": "嘉義市西區竹圍里竹圍路17號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "depression",
+        "social"
+      ],
+      "id": "07b3d9be4db1",
+      "name": "佛光山圓福寺",
+      "type": "社區關懷訪視",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2911505"
+      ],
+      "hours": "",
+      "address": "嘉義市西區後驛里博愛路二段241號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "depression",
+        "social"
+      ],
+      "id": "c06861b12c82",
+      "name": "竹村社區發展協會",
+      "type": "社區關懷訪視",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "0956510333"
+      ],
+      "hours": "",
+      "address": "嘉義市西區竹村里竹子腳1-3號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "depression",
+        "social"
+      ],
+      "id": "9adbfb7e0d1b",
+      "name": "臺南市私立靜觀社會福利慈善事業基金會嘉義分會-何庄",
+      "type": "社區關懷訪視",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "0915-971502"
+      ],
+      "hours": "",
+      "address": "嘉義市西區頭港里育人路613號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "depression",
+        "social"
+      ],
+      "id": "b1b1d625adf4",
+      "name": "慶安社區發展協會",
+      "type": "社區關懷訪視",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2325972"
+      ],
+      "hours": "",
+      "address": "嘉義市西區慶安里長安街109巷46號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "depression",
+        "social"
+      ],
+      "id": "d573ed9bcc50",
+      "name": "福民社區發展協會",
+      "type": "社區關懷訪視",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2369222"
+      ],
+      "hours": "",
+      "address": "嘉義市西區福民里重慶路315號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "depression",
+        "social"
+      ],
+      "id": "d67cbbc50887",
+      "name": "嘉義市家庭關懷協會",
+      "type": "社區關懷訪視",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2842782"
+      ],
+      "hours": "",
+      "address": "嘉義市西區西平里永春一街101號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "depression",
+        "social"
+      ],
+      "id": "f9307a6f0b07",
+      "name": "文化社區發展協會",
+      "type": "社區關懷訪視",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2292690"
+      ],
+      "hours": "",
+      "address": "嘉義市西區文化里文化路81-1號3樓、7樓、騎樓；嘉義市中央第二商場3號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "depression",
+        "social"
+      ],
+      "id": "360ead534387",
+      "name": "車店社區發展協會",
+      "type": "社區關懷訪視",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2355255"
+      ],
+      "hours": "",
+      "address": "嘉義市西區車店里車店街2號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "depression",
+        "social"
+      ],
+      "id": "199aafd1bb89",
+      "name": "導明社區發展協會",
+      "type": "社區關懷訪視",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2257560"
+      ],
+      "hours": "",
+      "address": "嘉義市西區導明里垂楊路309號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "depression",
+        "social"
+      ],
+      "id": "b42e72a92ab5",
+      "name": "嘉義市百種生活發展協會",
+      "type": "社區關懷訪視",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "0978-719396"
+      ],
+      "hours": "",
+      "address": "嘉義市西區紅瓦里重慶二街185附1號",
+      "website": "https://www.facebook.com/LifestyleHundred/",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "depression",
+        "social"
+      ],
+      "id": "8b45aae1f6fc",
+      "name": "國華杏福檜樂福利協會",
+      "type": "社區關懷訪視",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2287776"
+      ],
+      "hours": "",
+      "address": "嘉義市西區國華里國華街351巷20號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "depression",
+        "social"
+      ],
+      "id": "bd9a7d126585",
+      "name": "劉厝社區發展協會",
+      "type": "社區關懷訪視",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2850878"
+      ],
+      "hours": "",
+      "address": "嘉義市西區劉厝里劉厝路131號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "mobility"
+      ],
+      "id": "57f5a3cfaae1",
+      "name": "嘉義市輔具資源中心-東區服務處",
+      "type": "輔具中心",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2256686"
+      ],
+      "hours": "",
+      "address": "嘉義市東區彌陀路255號(舊大同高商)",
+      "website": "http://www.mpccc.com.tw/",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "mobility"
+      ],
+      "id": "6d6fab9a43f8",
+      "name": "嘉義市輔具資源中心-西區服務處",
+      "type": "輔具中心",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2858212"
+      ],
+      "hours": "",
+      "address": "嘉義市玉康路160號(再耕園4樓)",
+      "website": "http://www.mpccc.com.tw/",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "mobility"
+      ],
+      "id": "fa8d3eadc986",
+      "name": "嘉南儀器有限公司",
+      "type": "輔具租賃、購買",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2781918"
+      ],
+      "hours": "",
+      "address": "嘉義市東區北門里林森西路91號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "mobility"
+      ],
+      "id": "6b97dc08daa6",
+      "name": "吉杏展業股份有限公司",
+      "type": "輔具租賃、購買",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2787385"
+      ],
+      "hours": "",
+      "address": "嘉義市東區蘭潭里大雅路二段565號(天主教聖馬爾定醫院2樓維康醫療用品)",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "mobility"
+      ],
+      "id": "c2a14fa553c1",
+      "name": "聖心藥局",
+      "type": "輔具租賃、購買",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2777189"
+      ],
+      "hours": "",
+      "address": "嘉義市東區蘭潭里大雅路二段577號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "mobility"
+      ],
+      "id": "9501d910cd2c",
+      "name": "正全義肢復健器材股份有限公司",
+      "type": "輔具租賃、購買",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-3628643"
+      ],
+      "hours": "",
+      "address": "嘉義市東區中庄里忠孝路579號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "mobility"
+      ],
+      "id": "8232630fc0dd",
+      "name": "大樹醫藥股份有限公司",
+      "type": "輔具租賃、購買",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2391233"
+      ],
+      "hours": "",
+      "address": "嘉義市東區興仁里吳鳳南路649號(後庄藥局)",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "mobility"
+      ],
+      "id": "0b1d2368c85d",
+      "name": "吉杏展業股份有限公司",
+      "type": "輔具租賃、購買",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2753741"
+      ],
+      "hours": "",
+      "address": "嘉義市東區中庄里忠孝路539號(嘉義基督教醫院1樓維康醫療用品)",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "mobility"
+      ],
+      "id": "2c2799c23d10",
+      "name": "吉杏展業股份有限公司",
+      "type": "輔具租賃、購買",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2745621"
+      ],
+      "hours": "",
+      "address": "嘉義市東區義教里忠孝路642號(嘉義基督教醫院1樓維康醫療用品)",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "mobility"
+      ],
+      "id": "c5ff63ca3c91",
+      "name": "吉杏展業股份有限公司",
+      "type": "輔具租賃、購買",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2757663"
+      ],
+      "hours": "",
+      "address": "嘉義市東區蘭潭里大雅路567號(維康藥局)",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "mobility"
+      ],
+      "id": "d450c183be2f",
+      "name": "合泰儀器行",
+      "type": "輔具租賃、購買",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2789006"
+      ],
+      "hours": "",
+      "address": "嘉義市東區林森里長榮街52之3號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "mobility"
+      ],
+      "id": "68a7a0920926",
+      "name": "康興醫療器材行",
+      "type": "輔具租賃、購買",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2163577"
+      ],
+      "hours": "",
+      "address": "嘉義市東區東興里民樂街145號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "mobility"
+      ],
+      "id": "d60b418caaf9",
+      "name": "全民醫療器材行",
+      "type": "輔具租賃、購買",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2741162"
+      ],
+      "hours": "",
+      "address": "嘉義市東區中庄里忠孝路535號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "mobility"
+      ],
+      "id": "54ddaa1db016",
+      "name": "大樹醫藥股份有限公司",
+      "type": "輔具租賃、購買",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2775322"
+      ],
+      "hours": "",
+      "address": "嘉義市東區中山里民權路155、157號(民權藥局)",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "mobility"
+      ],
+      "id": "b052d4671f00",
+      "name": "宏揚醫療器材行",
+      "type": "輔具租賃、購買",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2766001"
+      ],
+      "hours": "",
+      "address": "嘉義市東區太平里新生路618號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "mobility"
+      ],
+      "id": "e5dfdec3e907",
+      "name": "美德耐股份有限公司",
+      "type": "輔具租賃、購買",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2745642"
+      ],
+      "hours": "",
+      "address": "嘉義市東區義教里保建街147號附4(嘉義基督教醫院門診大樓旁杏光藥局)",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "mobility"
+      ],
+      "id": "35f9a918fe3b",
+      "name": "長奕醫療器材行",
+      "type": "輔具租賃、購買",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2280606"
+      ],
+      "hours": "",
+      "address": "嘉義市東區中央里北榮街11號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "mobility"
+      ],
+      "id": "ccb9ff77d23d",
+      "name": "美德耐股份有限公司",
+      "type": "輔具租賃、購買",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2866733"
+      ],
+      "hours": "",
+      "address": "嘉義市西區劉厝里世賢路二段600號(臺中榮民總醫院嘉義分院醫療大樓1樓維康醫療用品)",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "mobility"
+      ],
+      "id": "c60da7ad7385",
+      "name": "昭安藥局",
+      "type": "輔具租賃、購買",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2842240"
+      ],
+      "hours": "",
+      "address": "嘉義市西區光路里民生南路479號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "mobility"
+      ],
+      "id": "06b2492f5643",
+      "name": "永佑企業有限公司",
+      "type": "輔具租賃、購買",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2832757"
+      ],
+      "hours": "",
+      "address": "嘉義市西區車店里車店街395號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "mobility"
+      ],
+      "id": "efef1ca89bcf",
+      "name": "安兵衛企業有限公司",
+      "type": "輔具租賃、購買",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2850759"
+      ],
+      "hours": "",
+      "address": "嘉義市西區自強里仁愛路69號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "mobility"
+      ],
+      "id": "7d1d689b0262",
+      "name": "照安藥局",
+      "type": "輔具租賃、購買",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2332883"
+      ],
+      "hours": "",
+      "address": "嘉義市西區福全里博愛路二段361號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "mobility"
+      ],
+      "id": "31f2b7610120",
+      "name": "美德耐股份有限公司",
+      "type": "輔具租賃、購買",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2910761"
+      ],
+      "hours": "",
+      "address": "嘉義市西區福安里北港路312號(衛生福利部嘉義醫院1樓掛號處對面維康醫療用品)",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "mobility"
+      ],
+      "id": "406c22b79796",
+      "name": "永純義肢股份有限公司",
+      "type": "輔具租賃、購買",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2380733"
+      ],
+      "hours": "",
+      "address": "嘉義市西區下埤里北港路1062號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "mobility"
+      ],
+      "id": "07ba4674bf1e",
+      "name": "嘉義公園射日塔",
+      "type": "免費輪椅租借(輪椅趴趴GO)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2751357"
+      ],
+      "hours": "",
+      "address": "嘉義市東區東川里公園街46號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "mobility"
+      ],
+      "id": "782a316f592f",
+      "name": "嘉義公園資訊站(大門左側1樓)",
+      "type": "免費輪椅租借(輪椅趴趴GO)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2744019"
+      ],
+      "hours": "",
+      "address": "嘉義市東區東川里啟明路264號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "mobility"
+      ],
+      "id": "c0526ef251cb",
+      "name": "嘉義城隍廟",
+      "type": "免費輪椅租借(輪椅趴趴GO)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2224116"
+      ],
+      "hours": "",
+      "address": "嘉義市東區民族里吳鳳北路168號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "mobility"
+      ],
+      "id": "1f420eee8db9",
+      "name": "震安宮",
+      "type": "免費輪椅租借(輪椅趴趴GO)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "0920-087256"
+      ],
+      "hours": "",
+      "address": "嘉義市東區過溝里民族路414號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "mobility"
+      ],
+      "id": "5efd95db8a61",
+      "name": "頂庄社區發展協會",
+      "type": "免費輪椅租借(輪椅趴趴GO)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2765298"
+      ],
+      "hours": "",
+      "address": "嘉義市東區頂庄里義教街538號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "mobility"
+      ],
+      "id": "a9af0f49615e",
+      "name": "國立嘉義大學(蘭潭校區)",
+      "type": "免費輪椅租借(輪椅趴趴GO)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2717150"
+      ],
+      "hours": "",
+      "address": "嘉義市東區鹿寮里學府路300號",
+      "website": "https://www.ncyu.edu.tw/",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "mobility"
+      ],
+      "id": "3f3f0677f71b",
+      "name": "獄政博物館",
+      "type": "免費輪椅租借(輪椅趴趴GO)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2789242"
+      ],
+      "hours": "",
+      "address": "嘉義市東區太平里維新路142號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "mobility"
+      ],
+      "id": "ace42254b3cc",
+      "name": "檜意森活村(農業精品館1F服務中心)",
+      "type": "免費輪椅租借(輪椅趴趴GO)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2761601 #2832"
+      ],
+      "hours": "",
+      "address": "嘉義市東區林森里林森東路1號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "mobility"
+      ],
+      "id": "f0e5f9291627",
+      "name": "親水公園(南興宮)",
+      "type": "免費輪椅租借(輪椅趴趴GO)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2309316"
+      ],
+      "hours": "",
+      "address": "嘉義市東區興仁里興仁街245號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "mobility"
+      ],
+      "id": "17aeb3e914e6",
+      "name": "鐵馬道餐廳",
+      "type": "免費輪椅租借(輪椅趴趴GO)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2867888"
+      ],
+      "hours": "",
+      "address": "嘉義市西區紅瓦里南京路197號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "mobility"
+      ],
+      "id": "69be3bafd1de",
+      "name": "中正公園(福社宮)",
+      "type": "免費輪椅租借(輪椅趴趴GO)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2278416"
+      ],
+      "hours": "",
+      "address": "嘉義市西區番社里忠義街179號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "mobility"
+      ],
+      "id": "56563463c99e",
+      "name": "北香湖公園",
+      "type": "免費輪椅租借(輪椅趴趴GO)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2226270"
+      ],
+      "hours": "",
+      "address": "嘉義市西區香湖里文化路552號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [],
+      "id": "b7fff31c8523",
+      "name": "嘉義市橘世代生涯發展中心",
+      "type": "生涯發展中心",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-3103612"
+      ],
+      "hours": "",
+      "address": "嘉義市西區友愛路241號",
+      "website": "https://www.facebook.com/chiayigeno",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "social"
+      ],
+      "id": "4d4868e678d1",
+      "name": "嘉義市身心障礙福利服務中心",
+      "type": "身心障礙福利服務中心",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2859043"
+      ],
+      "hours": "",
+      "address": "嘉義市西區錦州二街36號",
+      "website": "https://social.chiayi.gov.tw/cp.aspx?n=420",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "social"
+      ],
+      "id": "be45d2fecaec",
+      "name": "嘉義市社區大學",
+      "type": "社區大學",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2220060",
+        "2220063"
+      ],
+      "hours": "",
+      "address": "嘉義市彌陀路253號(大同技術學院內視聽樓1F)",
+      "website": "http://www.cycuclub.org/",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "social"
+      ],
+      "id": "c9ee63b97310",
+      "name": "嘉義市博愛社區大學",
+      "type": "社區大學",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2325982"
+      ],
+      "hours": "",
+      "address": "嘉義市博愛路二段241號",
+      "website": "https://boaicu.cyc.edu.tw/index.php",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "hearing"
+      ],
+      "id": "0a48672fe59e",
+      "name": "好市多聽力中心-嘉義店",
+      "type": "聽力所",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-3200787"
+      ],
+      "hours": "",
+      "address": "嘉義市東區後湖里忠孝路668號",
+      "website": "https://www.costco.com.tw/store-finder/Chiayi",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "hearing"
+      ],
+      "id": "d7a7c6956d4b",
+      "name": "科林助聽器-嘉義新生門市",
+      "type": "聽力所",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "0933-808459"
+      ],
+      "hours": "",
+      "address": "嘉義市東區太平里新生路621號",
+      "website": "https://www.facebook.com/N500CS/?locale=zh_TW",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "hearing"
+      ],
+      "id": "a999b8fffa7b",
+      "name": "上聆助聽器-嘉義門市",
+      "type": "聽力所",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2243847"
+      ],
+      "hours": "",
+      "address": "嘉義市東區東興里中山路177號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "hearing"
+      ],
+      "id": "f735fc25bf0f",
+      "name": "博士助聽器-嘉義門市",
+      "type": "聽力所",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2256188"
+      ],
+      "hours": "",
+      "address": "嘉義市東區中央里中山路208號",
+      "website": "https://www.facebook.com/drchiayi/",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "hearing"
+      ],
+      "id": "8cf991c06946",
+      "name": "虹韻助聽器-嘉義門市",
+      "type": "聽力所",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2277196"
+      ],
+      "hours": "",
+      "address": "嘉義市東區中央里中山路266號",
+      "website": "https://www.facebook.com/Chiayinewbest/?locale=zh_TW",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "hearing"
+      ],
+      "id": "f44886b8ff0d",
+      "name": "東立助聽器-吳鳳店",
+      "type": "聽力所",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2160198"
+      ],
+      "hours": "",
+      "address": "嘉義市東區中央里吳鳳北路285號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "hearing"
+      ],
+      "id": "31625ed05e1d",
+      "name": "美樂迪助聽器-嘉義西區門市",
+      "type": "聽力所",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2910486"
+      ],
+      "hours": "",
+      "address": "嘉義市西區福全里中興路347號",
+      "website": "http://www.melodyco.com.tw/",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "hearing"
+      ],
+      "id": "fccfaabacdd8",
+      "name": "科林助聽器-嘉義門市",
+      "type": "聽力所",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "0933-808459"
+      ],
+      "hours": "",
+      "address": "嘉義市西區書院里中山路560號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "hearing"
+      ],
+      "id": "208b38de7dfe",
+      "name": "元健助聽器-嘉義站前店",
+      "type": "聽力所",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2277077"
+      ],
+      "hours": "",
+      "address": "嘉義市西區書院里中山路651號",
+      "website": "https://www.facebook.com/DigibionicCYIzq/?locale=ms_MY",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "hearing"
+      ],
+      "id": "c08721fb2f1c",
+      "name": "信合美診所",
+      "type": "聽力所",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2867272#10"
+      ],
+      "hours": "",
+      "address": "嘉義市西區美源里興業西路87號",
+      "website": "https://www.shinnhomei.com.tw/",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "hearing"
+      ],
+      "id": "2e9d95a00ffc",
+      "name": "濰樂聽力中心-嘉義店",
+      "type": "聽力所",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2222308"
+      ],
+      "hours": "",
+      "address": "嘉義市西區致遠里興業西路32號",
+      "website": "https://www.facebook.com/SKD052222308/",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "hearing"
+      ],
+      "id": "5b36f5347cc2",
+      "name": "士德助聽器總行",
+      "type": "聽力所",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2240410"
+      ],
+      "hours": "",
+      "address": "嘉義市西區西榮里中山路507號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "hearing"
+      ],
+      "id": "be6e1a73c2fe",
+      "name": "東立助聽器-垂楊店",
+      "type": "聽力所",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2160197"
+      ],
+      "hours": "",
+      "address": "嘉義市西區導明里垂楊路257號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "vision"
+      ],
+      "id": "da622b813787",
+      "name": "睛華眼鏡行",
+      "type": "驗光所(含老花眼鏡補助)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2772160"
+      ],
+      "hours": "",
+      "address": "嘉義市東區仁義里台林街133號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "vision"
+      ],
+      "id": "e09f40beef90",
+      "name": "信德眼鏡行",
+      "type": "驗光所(含老花眼鏡補助)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2775346"
+      ],
+      "hours": "",
+      "address": "嘉義市東區頂庄里台林街122-6號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "vision"
+      ],
+      "id": "ddbf12f0bfb7",
+      "name": "醫光鐘錶眼鏡行",
+      "type": "驗光所(含老花眼鏡補助)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2220541"
+      ],
+      "hours": "",
+      "address": "嘉義市東區芳草里芳安路13號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "vision"
+      ],
+      "id": "87865067c540",
+      "name": "寶林眼鏡行",
+      "type": "驗光所(含老花眼鏡補助)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2288913"
+      ],
+      "hours": "",
+      "address": "嘉義市東區芳草里芳安路43號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "vision"
+      ],
+      "id": "859dfc962a2a",
+      "name": "優視光學眼鏡行",
+      "type": "驗光所(含老花眼鏡補助)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2278392"
+      ],
+      "hours": "",
+      "address": "嘉義市東區安寮里吳鳳南路203號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "vision"
+      ],
+      "id": "b23361055c5c",
+      "name": "巧士比眼鏡有限公司",
+      "type": "驗光所(含老花眼鏡補助)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2292029"
+      ],
+      "hours": "",
+      "address": "嘉義市東區過溝里民族路307號",
+      "website": "https://www.facebook.com/profile.php?id=100057098034337",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "vision"
+      ],
+      "id": "f40678ab356e",
+      "name": "萬國鐘錶眼鏡店",
+      "type": "驗光所(含老花眼鏡補助)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2228261"
+      ],
+      "hours": "",
+      "address": "嘉義市東區中央里中正路301號",
+      "website": "https://www.facebook.com/profile.php?id=100057513877050",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "vision"
+      ],
+      "id": "b5e58238b4a5",
+      "name": "木川鐘錶眼鏡店",
+      "type": "驗光所(含老花眼鏡補助)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2230021"
+      ],
+      "hours": "",
+      "address": "嘉義市東區中央里民權路325號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "vision"
+      ],
+      "id": "4a1772882a88",
+      "name": "嘉基隱形眼鏡行",
+      "type": "驗光所(含老花眼鏡補助)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2289131"
+      ],
+      "hours": "",
+      "address": "嘉義市東區中央里中山路237號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "vision"
+      ],
+      "id": "b56eb4d65746",
+      "name": "大華眼鏡行",
+      "type": "驗光所(含老花眼鏡補助)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2247728"
+      ],
+      "hours": "",
+      "address": "嘉義市東區中央里公明路255號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "vision"
+      ],
+      "id": "04b0b281f335",
+      "name": "高名眼鏡專店",
+      "type": "驗光所(含老花眼鏡補助)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2281183"
+      ],
+      "hours": "",
+      "address": "嘉義市東區中央里光華路96號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "vision"
+      ],
+      "id": "aa750a6ebd7b",
+      "name": "太平洋隱形眼鏡行",
+      "type": "驗光所(含老花眼鏡補助)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2771779"
+      ],
+      "hours": "",
+      "address": "嘉義市東區北門里民權路348號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "vision"
+      ],
+      "id": "6383a5a9e03d",
+      "name": "皇品城有限公司",
+      "type": "驗光所(含老花眼鏡補助)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2161234"
+      ],
+      "hours": "",
+      "address": "嘉義市西區書院里民族路794號",
+      "website": "https://www.facebook.com/NRT2161234",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "vision"
+      ],
+      "id": "71fe6ee5a610",
+      "name": "洪福眼鏡公司",
+      "type": "驗光所(含老花眼鏡補助)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2843555"
+      ],
+      "hours": "",
+      "address": "嘉義市西區垂楊里新民路854號",
+      "website": "https://www.facebook.com/hungfueyewear/?locale=zh_TW",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "vision"
+      ],
+      "id": "7b14b4430b4c",
+      "name": "光合作用眼鏡店",
+      "type": "驗光所(含老花眼鏡補助)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2852323"
+      ],
+      "hours": "",
+      "address": "嘉義市西區車店里興業西路326號",
+      "website": "https://reurl.cc/lDamx6",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "vision"
+      ],
+      "id": "40b83464a0bc",
+      "name": "寶愛林眼鏡行流行館",
+      "type": "驗光所(含老花眼鏡補助)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2350101"
+      ],
+      "hours": "",
+      "address": "嘉義市西區福民里興業西路293號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "vision"
+      ],
+      "id": "7f2cdf14b26e",
+      "name": "萊克眼鏡",
+      "type": "驗光所(含老花眼鏡補助)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2833399"
+      ],
+      "hours": "",
+      "address": "嘉義市西區福民里興業西路373號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "vision"
+      ],
+      "id": "7dbdb92be2ab",
+      "name": "文豪光學科技有限公司",
+      "type": "驗光所(含老花眼鏡補助)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2163363"
+      ],
+      "hours": "",
+      "address": "嘉義市西區文化里垂楊路442號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "vision"
+      ],
+      "id": "67e5d0505548",
+      "name": "鏵嶸光學眼鏡行",
+      "type": "驗光所(含老花眼鏡補助)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2226992"
+      ],
+      "hours": "",
+      "address": "嘉義市西區西榮里中山路465號",
+      "website": "https://www.facebook.com/profile.php?id=100054456522241",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "vision"
+      ],
+      "id": "cf30dfa58ba7",
+      "name": "中國眼鏡店",
+      "type": "驗光所(含老花眼鏡補助)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2259985"
+      ],
+      "hours": "",
+      "address": "嘉義市西區西榮里中山路473號",
+      "website": "https://www.facebook.com/ChinaOptical/",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "vision"
+      ],
+      "id": "e3663618746c",
+      "name": "得展眼鏡行",
+      "type": "驗光所(含老花眼鏡補助)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2239898"
+      ],
+      "hours": "",
+      "address": "嘉義市西區番社里中山路472號",
+      "website": "https://reurl.cc/4obKAv",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "social"
+      ],
+      "id": "8d2659bcc2b5",
+      "name": "嘉義市長期照顧管理中心",
+      "type": "長期照顧管理中心",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2336889"
+      ],
+      "hours": "",
+      "address": "嘉義市西區德明路1號",
+      "website": "https://longcare.chiayi.gov.tw/",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive",
+        "mobility",
+        "nutrition",
+        "depression",
+        "social"
+      ],
+      "id": "de0358b6af9a",
+      "name": "社團法人嘉義市東區精忠社區發展協會",
+      "type": "巷弄長照站(社照C據點)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2776068",
+        "05-2766646"
+      ],
+      "hours": "",
+      "address": "嘉義市東區圳頭里精忠一村1-6號",
+      "website": "https://reurl.cc/eDVRqj",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive",
+        "mobility",
+        "nutrition",
+        "depression",
+        "social"
+      ],
+      "id": "e0ee7657ef89",
+      "name": "嘉義市東區新店社區發展協會",
+      "type": "巷弄長照站(社照C據點)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2771563"
+      ],
+      "hours": "",
+      "address": "嘉義市東區新店里林森東路269巷1弄135號",
+      "website": "https://reurl.cc/gDnVLb",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive",
+        "mobility",
+        "nutrition",
+        "depression",
+        "social"
+      ],
+      "id": "174ebd7ba48a",
+      "name": "嘉義市東區東川社區發展協會",
+      "type": "巷弄長照站(社照C據點)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2769541"
+      ],
+      "hours": "",
+      "address": "嘉義市東區東川里公園街87號",
+      "website": "https://reurl.cc/M8MpY4",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive",
+        "mobility",
+        "nutrition",
+        "depression",
+        "social"
+      ],
+      "id": "4a4b7f5552f5",
+      "name": "嘉義市東區太平社區發展協會",
+      "type": "巷弄長照站(社照C據點)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2775585"
+      ],
+      "hours": "",
+      "address": "嘉義市東區太平里林森東路151號CH401、CH402教室",
+      "website": "https://reurl.cc/v7KYyj",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive",
+        "mobility",
+        "nutrition",
+        "depression",
+        "social"
+      ],
+      "id": "9888d0f88b10",
+      "name": "嘉義市東區興仁社區發展協會",
+      "type": "巷弄長照站(社照C據點)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2392307"
+      ],
+      "hours": "",
+      "address": "嘉義市東區興仁里軍輝路47號",
+      "website": "https://reurl.cc/7kbg9N",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive",
+        "mobility",
+        "nutrition",
+        "depression",
+        "social"
+      ],
+      "id": "f171ce3de672",
+      "name": "嘉義市東區神農社區發展協會",
+      "type": "巷弄長照站(社照C據點)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "0912-790430"
+      ],
+      "hours": "",
+      "address": "嘉義市東區朝陽里朝陽街64號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive",
+        "mobility",
+        "nutrition",
+        "depression",
+        "social"
+      ],
+      "id": "7f4f00f27ad1",
+      "name": "嘉義市東區新開社區發展協會",
+      "type": "巷弄長照站(社照C據點)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "0919-250102"
+      ],
+      "hours": "",
+      "address": "嘉義市東區新開里市宅街21巷19弄8號/財團法人嘉義天玄宮空地及守望相助亭",
+      "website": "https://www.facebook.com/groups/709266012490127",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive",
+        "mobility",
+        "nutrition",
+        "depression",
+        "social"
+      ],
+      "id": "3360dadc969a",
+      "name": "嘉義市東區後湖社區發展協會",
+      "type": "巷弄長照站(社照C據點)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "0935-214218"
+      ],
+      "hours": "",
+      "address": "嘉義市東區後湖里保義路60巷40號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive",
+        "mobility",
+        "nutrition",
+        "depression",
+        "social"
+      ],
+      "id": "c4fb55ef811d",
+      "name": "嘉義市西區竹圍社區發展協會",
+      "type": "巷弄長照站(社照C據點)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2330096"
+      ],
+      "hours": "",
+      "address": "嘉義市西區竹圍里竹圍路17號",
+      "website": "https://reurl.cc/kX8RVL",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive",
+        "mobility",
+        "nutrition",
+        "depression",
+        "social"
+      ],
+      "id": "ee937fb894a7",
+      "name": "社團法人嘉義市西區新厝社區發展協會",
+      "type": "巷弄長照站(社照C據點)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "0932-880298"
+      ],
+      "hours": "",
+      "address": "嘉義市西區新厝里龍江街87號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive",
+        "mobility",
+        "nutrition",
+        "depression",
+        "social"
+      ],
+      "id": "326ea6fc59e5",
+      "name": "嘉義市西區竹村社區發展協會",
+      "type": "巷弄長照站(社照C據點)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "0956-510333"
+      ],
+      "hours": "",
+      "address": "嘉義市西區竹村里竹子腳1-3號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive",
+        "mobility",
+        "nutrition",
+        "depression",
+        "social"
+      ],
+      "id": "c75f4de20495",
+      "name": "嘉義市西區劉厝社區發展協會",
+      "type": "巷弄長照站(社照C據點)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2850878"
+      ],
+      "hours": "",
+      "address": "嘉義市西區劉厝里劉厝路131號",
+      "website": "https://www.facebook.com/profile.php?id=100057639271754",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive",
+        "mobility",
+        "nutrition",
+        "depression",
+        "social"
+      ],
+      "id": "40192260b6d9",
+      "name": "嘉義市西區鳳梨會社社區發展協會",
+      "type": "巷弄長照站(社照C據點)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2850580"
+      ],
+      "hours": "",
+      "address": "嘉義市西區垂楊里建成街58巷73號、仁愛路293巷45號、47號、37號、35號及35號前廣場",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive",
+        "mobility",
+        "nutrition",
+        "depression",
+        "social"
+      ],
+      "id": "fc6be0e6f859",
+      "name": "嘉義市西區福民社區發展協會",
+      "type": "巷弄長照站(社照C據點)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2369222"
+      ],
+      "hours": "",
+      "address": "嘉義市西區福民里重慶路315號",
+      "website": "https://www.facebook.com/fumin2369222/?locale=zh_TW",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive",
+        "mobility",
+        "nutrition",
+        "depression",
+        "social"
+      ],
+      "id": "bc38e2b2ba19",
+      "name": "嘉義市西區車店社區發展協會",
+      "type": "巷弄長照站(社照C據點)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2355255"
+      ],
+      "hours": "",
+      "address": "嘉義市西區車店里車店街2號",
+      "website": "https://www.facebook.com/profile.php?id=100067461391148&locale=zh_TW",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive",
+        "mobility",
+        "nutrition",
+        "depression",
+        "social"
+      ],
+      "id": "85e767aa85a8",
+      "name": "嘉義市西區育英里辦公處",
+      "type": "巷弄長照站(社照C據點)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2290166"
+      ],
+      "hours": "",
+      "address": "嘉義市西區育英里國華街52號",
+      "website": "https://www.facebook.com/loveyuying22/",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive",
+        "mobility",
+        "nutrition",
+        "depression",
+        "social"
+      ],
+      "id": "6b9886b1991b",
+      "name": "嘉義市西區文化社區發展協會",
+      "type": "巷弄長照站(社照C據點)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2292690"
+      ],
+      "hours": "",
+      "address": "嘉義市西區文化里9鄰文化路81-1號3樓、7樓、騎樓，嘉義市中央第二商場3號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive",
+        "mobility",
+        "nutrition",
+        "depression",
+        "social"
+      ],
+      "id": "3986b8cd84ef",
+      "name": "嘉義市西區導民社區發展協會",
+      "type": "巷弄長照站(社照C據點)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2257560"
+      ],
+      "hours": "",
+      "address": "嘉義市西區導明里7鄰垂楊路309號",
+      "website": "https://www.facebook.com/fumin2369222/?locale=zh_TW",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive",
+        "mobility",
+        "nutrition",
+        "depression",
+        "social"
+      ],
+      "id": "884a4b7500f1",
+      "name": "嘉義市西區慶安社區發展協會",
+      "type": "巷弄長照站(社照C據點)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2325972"
+      ],
+      "hours": "",
+      "address": "嘉義市西區慶安里長安街109巷46號",
+      "website": "https://www.facebook.com/CYCACDA/",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive",
+        "mobility",
+        "nutrition",
+        "depression",
+        "social"
+      ],
+      "id": "0b98cb48f351",
+      "name": "嘉義市西區白川町社區發展協會",
+      "type": "巷弄長照站(社照C據點)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2280001"
+      ],
+      "hours": "",
+      "address": "嘉義市西區翠岱里志昇街107號",
+      "website": "https://www.facebook.com/shirakawa2016/?locale=zh_TW",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive",
+        "mobility",
+        "nutrition",
+        "depression",
+        "social"
+      ],
+      "id": "7c517f29f1c0",
+      "name": "社團法人嘉義市家庭關懷協會",
+      "type": "巷弄長照站(社照C據點)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2842782"
+      ],
+      "hours": "",
+      "address": "嘉義市西區西平里永春一街101號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive",
+        "mobility",
+        "nutrition",
+        "depression",
+        "social"
+      ],
+      "id": "eb67bf00e7ea",
+      "name": "佛光山圓福寺",
+      "type": "巷弄長照站(社照C據點)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2911505"
+      ],
+      "hours": "",
+      "address": "嘉義市西區後驛里博愛路2段241號",
+      "website": "https://www.facebook.com/fgsyft/?locale=zh_TW",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive",
+        "mobility",
+        "nutrition",
+        "depression",
+        "social"
+      ],
+      "id": "81fabd314c4a",
+      "name": "財團法人嘉義市私立保康社會福利慈善事業基金會-常樂園",
+      "type": "巷弄長照站(社照C據點)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2348836"
+      ],
+      "hours": "",
+      "address": "嘉義市西區致遠里新榮路35巷1號1樓",
+      "website": "https://www.facebook.com/cychhome",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive",
+        "mobility",
+        "nutrition",
+        "depression",
+        "social"
+      ],
+      "id": "b72ccc518f36",
+      "name": "財團法人嘉義市私立保康社會福利慈善事業基金會-祈樂園",
+      "type": "巷弄長照站(社照C據點)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2348836"
+      ],
+      "hours": "",
+      "address": "嘉義市西區保生里自由路426號",
+      "website": "https://www.facebook.com/cychhome",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive",
+        "mobility",
+        "nutrition",
+        "depression",
+        "social"
+      ],
+      "id": "67b628f6de54",
+      "name": "嘉義市興村人文關懷協會",
+      "type": "巷弄長照站(社照C據點)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2306039"
+      ],
+      "hours": "",
+      "address": "嘉義市東區興村里溪興街265-1號",
+      "website": "https://www.facebook.com/profile.php?id=100068364139017",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive",
+        "mobility",
+        "nutrition",
+        "depression",
+        "social"
+      ],
+      "id": "fde4ea88d72e",
+      "name": "社團法人嘉義市真正好全人關顧協會",
+      "type": "巷弄長照站(社照C據點)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2772077"
+      ],
+      "hours": "",
+      "address": "嘉義市東區王田里圓福街82號",
+      "website": "https://www.facebook.com/groups/1300700336708493/",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive",
+        "mobility",
+        "nutrition",
+        "depression",
+        "social"
+      ],
+      "id": "0f692e185584",
+      "name": "財團法人嘉義市慈龍寺",
+      "type": "巷弄長照站(社照C據點)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2774488"
+      ],
+      "hours": "",
+      "address": "嘉義市東區北門里長榮街206號",
+      "website": "https://www.facebook.com/cyctlt/?locale=zh_TW",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive",
+        "mobility",
+        "nutrition",
+        "depression",
+        "social"
+      ],
+      "id": "b25337ee8a71",
+      "name": "嘉義市國華杏福檜樂福利協會",
+      "type": "巷弄長照站(社照C據點)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2287776"
+      ],
+      "hours": "",
+      "address": "嘉義市西區國華里國華街351巷20號",
+      "website": "https://www.facebook.com/profile.php?id=100069020834967",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive",
+        "mobility",
+        "nutrition",
+        "depression",
+        "social"
+      ],
+      "id": "e4f8f1cdf49f",
+      "name": "財團法人私立天主教中華聖母社會福利慈善事業基金會",
+      "type": "巷弄長照站(社照C據點)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2253901"
+      ],
+      "hours": "",
+      "address": "嘉義市西區致遠里新榮路35巷14號1樓活動中心(H棟)",
+      "website": "https://www.solc.org.tw/",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive",
+        "mobility",
+        "nutrition",
+        "depression",
+        "social"
+      ],
+      "id": "2c52fef94e27",
+      "name": "嘉義市社區醫療發展協會",
+      "type": "巷弄長照站(社照C據點)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2287688"
+      ],
+      "hours": "",
+      "address": "嘉義市東區芳安里宣信街157號",
+      "website": "https://www.facebook.com/profile.php?id=100070974942690",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive",
+        "mobility",
+        "nutrition",
+        "depression",
+        "social"
+      ],
+      "id": "d81c5d13ff9e",
+      "name": "社團法人嘉義市陽明健康促進會-頂庄",
+      "type": "巷弄長照站(社照C據點)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2252000#1295"
+      ],
+      "hours": "",
+      "address": "嘉義市東區頂庄里義教街542巷20號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive",
+        "mobility",
+        "nutrition",
+        "depression",
+        "social"
+      ],
+      "id": "a818661cb7f3",
+      "name": "財團法人臺南市私立靜觀社會福利慈善事業基金會嘉義分會-大溪",
+      "type": "巷弄長照站(社照C據點)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "0915-971502"
+      ],
+      "hours": "",
+      "address": "嘉義市西區大溪里大溪路593-1號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive",
+        "mobility",
+        "nutrition",
+        "depression",
+        "social"
+      ],
+      "id": "0a1845cddc84",
+      "name": "財團法人臺南市私立靜觀社會福利慈善事業基金會嘉義分會-何庄",
+      "type": "巷弄長照站(社照C據點)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "0915-971502"
+      ],
+      "hours": "",
+      "address": "嘉義市西區頭港里育人路613號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive",
+        "mobility",
+        "nutrition",
+        "depression",
+        "social"
+      ],
+      "id": "b33fdd6eff9b",
+      "name": "財團法人私立天主教中華聖母社會福利慈善事業基金會-崇仁專校",
+      "type": "巷弄長照站(社照C據點)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2773932#830"
+      ],
+      "hours": "",
+      "address": "嘉義市東區盧厝里紅毛埤217號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive",
+        "mobility",
+        "nutrition",
+        "depression",
+        "social"
+      ],
+      "id": "d6c7e0ac2476",
+      "name": "嘉義市百種生活發展協會",
+      "type": "巷弄長照站(社照C據點)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "0981-669814"
+      ],
+      "hours": "",
+      "address": "嘉義市西區紅瓦里重慶二街185附1號",
+      "website": "https://www.facebook.com/LifestyleHundred/",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive",
+        "mobility",
+        "nutrition",
+        "depression",
+        "social"
+      ],
+      "id": "e610e70924a6",
+      "name": "財團法人嘉義市私立保康社會福利慈善事業基金會",
+      "type": "巷弄長照站(社照C據點)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2348836"
+      ],
+      "hours": "",
+      "address": "嘉義市東區荖藤里忠孝路790-56號",
+      "website": "https://www.facebook.com/cychhome",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive",
+        "mobility",
+        "nutrition",
+        "depression",
+        "social"
+      ],
+      "id": "11c80e16882c",
+      "name": "財團法人弘道老人福利基金會",
+      "type": "巷弄長照站(社照C據點)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-3103612#21"
+      ],
+      "hours": "",
+      "address": "嘉義市西區竹圍里德安路2號",
+      "website": "https://www.hondao.org.tw/article-detail/7432",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive",
+        "mobility",
+        "nutrition",
+        "depression",
+        "social"
+      ],
+      "id": "0c3f72566d10",
+      "name": "仁德醫療社團法人陳仁德醫院(文雅里)",
+      "type": "巷弄長照站(醫事C據點)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2758600"
+      ],
+      "hours": "",
+      "address": "嘉義市東區文雅里16鄰大雅路一段786號",
+      "website": "https://www.jdhc.org.tw/",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive",
+        "mobility",
+        "nutrition",
+        "depression",
+        "social"
+      ],
+      "id": "58d4cf45d44f",
+      "name": "仁德醫療社團法人陳仁德醫院(芳安里)",
+      "type": "巷弄長照站(醫事C據點)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2272556"
+      ],
+      "hours": "",
+      "address": "嘉義市東區芳安里6鄰南興路20號",
+      "website": "https://www.jdhc.org.tw/",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive",
+        "mobility",
+        "nutrition",
+        "depression",
+        "social"
+      ],
+      "id": "2268ec9174e0",
+      "name": "仁德醫療社團法人陳仁德醫院(光路里)",
+      "type": "巷弄長照站(醫事C據點)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2855258"
+      ],
+      "hours": "",
+      "address": "嘉義市西區光路里9鄰新民路555巷6號",
+      "website": "https://www.jdhc.org.tw/",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive",
+        "mobility",
+        "nutrition",
+        "depression",
+        "social"
+      ],
+      "id": "52fa0a3eacbf",
+      "name": "仁德醫療社團法人陳仁德醫院(番社里)",
+      "type": "巷弄長照站(醫事C據點)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2258279*116"
+      ],
+      "hours": "",
+      "address": "嘉義市西區番社里4鄰北榮街221巷2號",
+      "website": "https://www.jdhc.org.tw/",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive",
+        "mobility",
+        "nutrition",
+        "depression",
+        "social"
+      ],
+      "id": "fa83e2dc5291",
+      "name": "天主教中華聖母修女會醫療財團法人天主教聖馬爾定醫院(中山里)",
+      "type": "巷弄長照站(醫事C據點)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2756226"
+      ],
+      "hours": "",
+      "address": "嘉義市東區中山里16鄰民權路52之9號",
+      "website": "https://www.facebook.com/profile.php?id=100063701846959",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive",
+        "mobility",
+        "nutrition",
+        "depression",
+        "social"
+      ],
+      "id": "c6844fe21a0d",
+      "name": "天主教中華聖母修女會醫療財團法人天主教聖馬爾定醫院(蘭潭里)",
+      "type": "巷弄長照站(醫事C據點)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2756026"
+      ],
+      "hours": "",
+      "address": "嘉義市東區蘭潭里12鄰小雅路513巷10之1號",
+      "website": "https://www.facebook.com/profile.php?id=100063760374401",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive",
+        "mobility",
+        "nutrition",
+        "depression",
+        "social"
+      ],
+      "id": "50410fced63a",
+      "name": "王國哲診所(湖內里)",
+      "type": "巷弄長照站(醫事C據點)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2855808"
+      ],
+      "hours": "",
+      "address": "嘉義市西區湖內里民生南路936號",
+      "website": "https://www.facebook.com/profile.php?id=100075736044584",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive",
+        "mobility",
+        "nutrition",
+        "depression",
+        "social"
+      ],
+      "id": "eca769a1f104",
+      "name": "王國哲診所(興安里)",
+      "type": "巷弄長照站(醫事C據點)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2251115"
+      ],
+      "hours": "",
+      "address": "嘉義市東區興安里興美六路83沆",
+      "website": "https://www.facebook.com/profile.php?id=100077551056864",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive",
+        "mobility",
+        "nutrition",
+        "depression",
+        "social"
+      ],
+      "id": "484b103197ef",
+      "name": "王國哲診所(磚磘里)",
+      "type": "巷弄長照站(醫事C據點)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2851311"
+      ],
+      "hours": "",
+      "address": "嘉義市西區磚磘里8鄰大統路167號",
+      "website": "https://www.facebook.com/profile.php?id=100063604584875",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive",
+        "mobility",
+        "nutrition",
+        "depression",
+        "social"
+      ],
+      "id": "1e0d2e81e673",
+      "name": "王國哲診所(福全里)",
+      "type": "巷弄長照站(醫事C據點)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2313689"
+      ],
+      "hours": "",
+      "address": "嘉義市西區福全里6鄰北港路11號",
+      "website": "https://www.facebook.com/profile.php?id=100083643360700",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive",
+        "mobility",
+        "nutrition",
+        "depression",
+        "social"
+      ],
+      "id": "d6a91fee9737",
+      "name": "王國哲診所(重興里)",
+      "type": "巷弄長照站(醫事C據點)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2321377"
+      ],
+      "hours": "",
+      "address": "嘉義市西區重興里5鄰興達路129號",
+      "website": "https://www.facebook.com/profile.php?id=100064306650291",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive",
+        "mobility",
+        "nutrition",
+        "depression",
+        "social"
+      ],
+      "id": "e261cfc3b16f",
+      "name": "佛教慈濟醫療財團法人大林慈濟醫院(書院里)",
+      "type": "巷弄長照站(醫事C據點)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2167000#3013",
+        "05-2648000#1168",
+        "0974-206577"
+      ],
+      "hours": "",
+      "address": "嘉義市西區書院里延平街448號6樓之2",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive",
+        "mobility",
+        "nutrition",
+        "depression",
+        "social"
+      ],
+      "id": "7ce871160bf9",
+      "name": "陽明醫院(中央里)",
+      "type": "巷弄長照站(醫事C據點)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2166299"
+      ],
+      "hours": "",
+      "address": "嘉義市東區中央里7鄰民權路315號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive",
+        "mobility",
+        "nutrition",
+        "depression",
+        "social"
+      ],
+      "id": "1d4042a2b7eb",
+      "name": "陽明醫院(港坪里)",
+      "type": "巷弄長照站(醫事C據點)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2350199"
+      ],
+      "hours": "",
+      "address": "嘉義市西區港坪里2鄰育人路165巷48號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive",
+        "mobility",
+        "nutrition",
+        "depression",
+        "social"
+      ],
+      "id": "31577b06f3da",
+      "name": "嘉義市西區衛生所(福全里)",
+      "type": "巷弄長照站(醫事C據點)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2337355 #269#283"
+      ],
+      "hours": "",
+      "address": "嘉義市西區福全里30鄰德明路1號",
+      "website": "https://www.facebook.com/profile.php?id=100069033645594",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive",
+        "mobility",
+        "nutrition",
+        "depression",
+        "social"
+      ],
+      "id": "9850015ca113",
+      "name": "嘉義市東區衛生所(短竹里)",
+      "type": "巷弄長照站(醫事C據點)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2750423#303或503",
+        "05-2750423*315"
+      ],
+      "hours": "",
+      "address": "嘉義市東區短竹里11鄰大雅路2段625號",
+      "website": "https://www.facebook.com/Chiayi.easthealthcenter",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive",
+        "mobility",
+        "nutrition",
+        "depression",
+        "social"
+      ],
+      "id": "bf0326d879ab",
+      "name": "臺中榮民總醫院嘉義分院(致遠里)",
+      "type": "巷弄長照站(醫事C據點)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2226729"
+      ],
+      "hours": "",
+      "address": "嘉義市西區致遠里12鄰新榮路35巷11號1-1",
+      "website": "https://www.facebook.com/C052226729",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive",
+        "mobility",
+        "nutrition",
+        "depression",
+        "social"
+      ],
+      "id": "d43c103bf716",
+      "name": "慶昇醫療社團法人慶昇醫院(芳草里)",
+      "type": "巷弄長照站(醫事C據點)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2288977"
+      ],
+      "hours": "",
+      "address": "嘉義市東區芳草里3鄰芳安路83號",
+      "website": "https://www.facebook.com/profile.php?id=100064145345616&locale=hi_IN",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive",
+        "mobility",
+        "nutrition",
+        "depression",
+        "social"
+      ],
+      "id": "2cc8d532cbe8",
+      "name": "慶昇醫療社團法人慶昇醫院(保福里)",
+      "type": "巷弄長照站(醫事C據點)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2333100"
+      ],
+      "hours": "",
+      "address": "嘉義市西區保福里1鄰德安路116號1樓",
+      "website": "https://www.facebook.com/profile.php?id=100064145345616&locale=hi_IN",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive",
+        "mobility",
+        "nutrition",
+        "depression",
+        "social"
+      ],
+      "id": "495e65062f5b",
+      "name": "衛生福利部嘉義醫院(新富里)",
+      "type": "巷弄長照站(醫事C據點)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2273609",
+        "05-2319090*2642"
+      ],
+      "hours": "",
+      "address": "嘉義市西區新富里13鄰新榮路189號",
+      "website": "https://www.chyi.mohw.gov.tw/page.asp?orcaid={0053B1B5-146F-480E-9998-EA2B7C87B3FE}",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive",
+        "mobility",
+        "nutrition",
+        "depression",
+        "social"
+      ],
+      "id": "adb822bf8d49",
+      "name": "戴德森醫療財團法人嘉義基督教醫院(嘉園)(嘉義大學林森校區)(太平里)",
+      "type": "巷弄長照站(醫事C據點)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2760650"
+      ],
+      "hours": "",
+      "address": "嘉義市東區太平里18鄰林森東路151號",
+      "website": "https://www.facebook.com/profile.php?id=100086173244848",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive"
+      ],
+      "id": "1087841cde96",
+      "name": "天主教中華聖母基金會-嘉義市失智共同照護中心",
+      "type": "失智共照中心",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2710059"
+      ],
+      "hours": "",
+      "address": "嘉義市大雅路二段565號",
+      "website": "https://www.facebook.com/profile.php?id=100057653949742",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive"
+      ],
+      "id": "09f897fe5c40",
+      "name": "嘉義基督教醫院-嘉義市失智共同照護中心",
+      "type": "失智共照中心",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2761625"
+      ],
+      "hours": "",
+      "address": "嘉義市東區忠孝路654號",
+      "website": "https://www.facebook.com/dementiacych",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive"
+      ],
+      "id": "f2713ed5e20f",
+      "name": "嘉義基督教醫院-聖彼得坊",
+      "type": "失智社區服務據點",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2279835"
+      ],
+      "hours": "",
+      "address": "嘉義市東區過溝里興中街8號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive"
+      ],
+      "id": "94e7972fbfeb",
+      "name": "嘉義基督教醫院-慈愛坊",
+      "type": "失智社區服務據點",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2773522"
+      ],
+      "hours": "",
+      "address": "嘉義市東區中庄里台斗街263之33之2號1樓",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive"
+      ],
+      "id": "28b8ac2951d6",
+      "name": "嘉義基督教醫院-星嘉活憶坊",
+      "type": "失智社區服務據點",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2841380"
+      ],
+      "hours": "",
+      "address": "嘉義市西區車店里興業西路523號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive"
+      ],
+      "id": "2626d3ce115d",
+      "name": "陽明醫院-民權學堂",
+      "type": "失智社區服務據點",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2252020"
+      ],
+      "hours": "",
+      "address": "嘉義市西區民權路385號1樓",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive"
+      ],
+      "id": "914fbe85a860",
+      "name": "陽明醫院-竹村憶享學堂",
+      "type": "失智社區服務據點",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2382723"
+      ],
+      "hours": "",
+      "address": "嘉義市西區竹村里竹子腳巷21號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "cognitive"
+      ],
+      "id": "0c5e01556103",
+      "name": "臺中榮民總醫院嘉義分院-向日小站",
+      "type": "失智社區服務據點",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "0958-866177"
+      ],
+      "hours": "",
+      "address": "嘉義市東區圳頭里林森東路722之17號Cb棟1樓(精忠新城)",
+      "website": "https://www.facebook.com/SunnySunGOGOGO",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "social"
+      ],
+      "id": "ee1b298ba201",
+      "name": "戴德森醫療財團法人嘉義基督教醫院-艷紫荊",
+      "type": "家庭照顧者支持服務據點",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2348836"
+      ],
+      "hours": "",
+      "address": "嘉義市西區保生里自由路426號",
+      "website": "https://www.facebook.com/cychhome",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "social"
+      ],
+      "id": "efa2c983c583",
+      "name": "戴德森醫療財團法人嘉義基督教醫院-滿天星",
+      "type": "家庭照顧者支持服務據點",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2768969"
+      ],
+      "hours": "",
+      "address": "嘉義市東區後庄里東義路22號",
+      "website": "https://www.facebook.com/cychhome",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "social"
+      ],
+      "id": "0235e5038fd8",
+      "name": "財團法人伊甸社會福利基金會附設嘉義市私立嘉義居家式長期照顧服務機構",
+      "type": "家庭照顧者支持服務據點",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2860065-211"
+      ],
+      "hours": "",
+      "address": "嘉義市西區磚磘里大華街43號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "social"
+      ],
+      "id": "3fdcd82ac147",
+      "name": "嘉義市東區衛生所",
+      "type": "家庭照顧者支持服務據點",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2750423 #501"
+      ],
+      "hours": "",
+      "address": "嘉義市東區短竹里大雅路二段625號",
+      "website": "https://healtheast.chiayi.gov.tw/",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "social"
+      ],
+      "id": "3bc695ba055b",
+      "name": "衛生福利部嘉義醫院",
+      "type": "家庭照顧者支持服務據點",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "2319090#2238"
+      ],
+      "hours": "",
+      "address": "嘉義市西區福全里北港路312號",
+      "website": "https://www.chyi.mohw.gov.tw/",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "medication"
+      ],
+      "id": "457b7551c763",
+      "name": "友愛藥局",
+      "type": "高齡友善社區藥局",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2330599"
+      ],
+      "hours": "",
+      "address": "嘉義市友愛路170號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "medication"
+      ],
+      "id": "a957cadcdf4e",
+      "name": "明興藥局",
+      "type": "高齡友善社區藥局",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2365938"
+      ],
+      "hours": "",
+      "address": "嘉義市仁愛路199號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "medication"
+      ],
+      "id": "bf248d21603d",
+      "name": "杏安藥局",
+      "type": "高齡友善社區藥局",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2271727"
+      ],
+      "hours": "",
+      "address": "嘉義市民族路786號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "medication"
+      ],
+      "id": "2a6d7464b6cc",
+      "name": "秉原藥局",
+      "type": "高齡友善社區藥局",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2285812"
+      ],
+      "hours": "",
+      "address": "嘉義市民族路700號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "medication"
+      ],
+      "id": "7a074f9fe97c",
+      "name": "大正藥局",
+      "type": "高齡友善社區藥局",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2285812"
+      ],
+      "hours": "",
+      "address": "嘉義市民族路702號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "medication"
+      ],
+      "id": "fd03b9be5d2f",
+      "name": "一安藥局",
+      "type": "高齡友善社區藥局",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2859275"
+      ],
+      "hours": "",
+      "address": "嘉義市興業西路311號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "medication"
+      ],
+      "id": "1744362b2181",
+      "name": "信輝藥局",
+      "type": "高齡友善社區藥局",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2252415"
+      ],
+      "hours": "",
+      "address": "嘉義市吳鳳南路353號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "medication"
+      ],
+      "id": "716c173e2cba",
+      "name": "普羅藥局",
+      "type": "高齡友善社區藥局",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2754836"
+      ],
+      "hours": "",
+      "address": "嘉義市民權路114號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "medication"
+      ],
+      "id": "29bbffd8aa78",
+      "name": "益生堂藥局",
+      "type": "高齡友善社區藥局",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2861415"
+      ],
+      "hours": "",
+      "address": "嘉義市杭州三街30號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "medication"
+      ],
+      "id": "688dc12ded10",
+      "name": "勝成中西藥局",
+      "type": "高齡友善社區藥局",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2360247"
+      ],
+      "hours": "",
+      "address": "嘉義市南京路126巷19號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "medication"
+      ],
+      "id": "2a7e67a5d326",
+      "name": "弘安(文化)藥局",
+      "type": "高齡友善社區藥局",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2259000"
+      ],
+      "hours": "",
+      "address": "嘉義市文化路277號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "medication"
+      ],
+      "id": "709534b1518a",
+      "name": "乙展藥局",
+      "type": "高齡友善社區藥局",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2279556"
+      ],
+      "hours": "",
+      "address": "嘉義市蘭井街72號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "medication"
+      ],
+      "id": "1233955d1363",
+      "name": "民族弘安藥局",
+      "type": "高齡友善社區藥局",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2240101"
+      ],
+      "hours": "",
+      "address": "嘉義市民族路165號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "medication"
+      ],
+      "id": "510a7d0fb583",
+      "name": "昱安藥局",
+      "type": "高齡友善社區藥局",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2252395"
+      ],
+      "hours": "",
+      "address": "嘉義市成仁街180號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "medication"
+      ],
+      "id": "b311d52ef081",
+      "name": "聖心藥局",
+      "type": "高齡友善社區藥局",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2777189"
+      ],
+      "hours": "",
+      "address": "嘉義市大雅路2段577號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "medication"
+      ],
+      "id": "35ce8bc6a563",
+      "name": "大明藥局",
+      "type": "高齡友善社區藥局",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2760958"
+      ],
+      "hours": "",
+      "address": "嘉義市大雅路二段682號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "medication"
+      ],
+      "id": "05c019bef7e7",
+      "name": "照安藥局",
+      "type": "高齡友善社區藥局",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2332883"
+      ],
+      "hours": "",
+      "address": "嘉義市博愛路2段361號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "medication"
+      ],
+      "id": "cee9707cd441",
+      "name": "德昌藥局",
+      "type": "高齡友善社區藥局",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2280306"
+      ],
+      "hours": "",
+      "address": "嘉義市中央里吳鳳北路211號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "medication"
+      ],
+      "id": "966a64aa04aa",
+      "name": "秉榮藥局",
+      "type": "高齡友善社區藥局",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2220318"
+      ],
+      "hours": "",
+      "address": "嘉義市中山路189號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "medication"
+      ],
+      "id": "3524517de981",
+      "name": "仁愛弘安藥局",
+      "type": "高齡友善社區藥局",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2239000"
+      ],
+      "hours": "",
+      "address": "嘉義市仁愛路393號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "medication"
+      ],
+      "id": "514b56adc0d6",
+      "name": "苰安藥局",
+      "type": "高齡友善社區藥局",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2910585"
+      ],
+      "hours": "",
+      "address": "嘉義市西區友愛路236號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "medication"
+      ],
+      "id": "064814baab0a",
+      "name": "穎川保健藥局",
+      "type": "高齡友善社區藥局",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2223609"
+      ],
+      "hours": "",
+      "address": "嘉義市中山路204號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "medication"
+      ],
+      "id": "fb4b4699c8d1",
+      "name": "大統藥局",
+      "type": "高齡友善社區藥局",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2330230"
+      ],
+      "hours": "",
+      "address": "嘉義市北興街136號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "medication"
+      ],
+      "id": "d84859bb178a",
+      "name": "安泰藥局",
+      "type": "高齡友善社區藥局",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2294202"
+      ],
+      "hours": "",
+      "address": "嘉義市民族路181號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "medication"
+      ],
+      "id": "a2f1c6fae6ec",
+      "name": "安麗藥師藥局",
+      "type": "高齡友善社區藥局",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2352395"
+      ],
+      "hours": "",
+      "address": "嘉義市廣州街206號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "medication"
+      ],
+      "id": "d2bdc3f62752",
+      "name": "德和藥局",
+      "type": "高齡友善社區藥局",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2789940"
+      ],
+      "hours": "",
+      "address": "嘉義市仁義里新生路703號1F",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "medication"
+      ],
+      "id": "6ccdd2be6ab3",
+      "name": "萬泰藥師藥局",
+      "type": "高齡友善社區藥局",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2168605"
+      ],
+      "hours": "",
+      "address": "嘉義市民族路494號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "medication"
+      ],
+      "id": "67bc3e2e7eac",
+      "name": "齊悅藥局",
+      "type": "高齡友善社區藥局",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2843514"
+      ],
+      "hours": "",
+      "address": "嘉義市西區玉山路145號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "medication"
+      ],
+      "id": "5c01ef0a0b3d",
+      "name": "逢春藥局",
+      "type": "高齡友善社區藥局",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2326990"
+      ],
+      "hours": "",
+      "address": "嘉義市北興街417號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [
+        "medication"
+      ],
+      "id": "dae361cb611d",
+      "name": "振安藥局",
+      "type": "高齡友善社區藥局",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2756541"
+      ],
+      "hours": "",
+      "address": "嘉義市林森東路300號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [],
+      "id": "6861ed525c82",
+      "name": "短竹里健康小站",
+      "type": "社區健康小站(提供測量血壓與血糖服務)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2756000#3307"
+      ],
+      "hours": "",
+      "address": "嘉義市東區短竹里光仁街上(短竹24號公園)",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [],
+      "id": "45c2d97b21a5",
+      "name": "王田里健康小站-圓福街",
+      "type": "社區健康小站(提供測量血壓與血糖服務)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2756000#3307"
+      ],
+      "hours": "",
+      "address": "嘉義市東區王田里圓福街32號(順利公園城大樓)",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [],
+      "id": "dda5423ea92f",
+      "name": "頂庄公園健康小站",
+      "type": "社區健康小站(提供測量血壓與血糖服務)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2756000#3307"
+      ],
+      "hours": "",
+      "address": "嘉義市東區頂庄里義教街613號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [],
+      "id": "9c548d5b8bb5",
+      "name": "荖藤里健康小站",
+      "type": "社區健康小站(提供測量血壓與血糖服務)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2756000#3307"
+      ],
+      "hours": "",
+      "address": "嘉義市東區老騰里忠孝路790-56號(民雄榮光堂)",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [],
+      "id": "ddb18fc328b7",
+      "name": "文雅里健康小站",
+      "type": "社區健康小站(提供測量血壓與血糖服務)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2756000#3307"
+      ],
+      "hours": "",
+      "address": "嘉義市東區文雅里文心街36號旁巷內",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [],
+      "id": "6e3578ea804c",
+      "name": "長竹發展協會健康小站",
+      "type": "社區健康小站(提供測量血壓與血糖服務)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2756000#3307"
+      ],
+      "hours": "",
+      "address": "嘉義市東區長竹里大雅路二段396號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [],
+      "id": "86f7f78e689c",
+      "name": "興村教會健康小站",
+      "type": "社區健康小站(提供測量血壓與血糖服務)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2756000#3307"
+      ],
+      "hours": "",
+      "address": "嘉義市東區興仁里軍輝路43號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [],
+      "id": "5ae6b6104548",
+      "name": "北門里健康小站",
+      "type": "社區健康小站(提供測量血壓與血糖服務)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2756000#3307"
+      ],
+      "hours": "",
+      "address": "嘉義市東區北門里長榮街208號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [],
+      "id": "5d6f1b73e274",
+      "name": "義教里健康小站",
+      "type": "社區健康小站(提供測量血壓與血糖服務)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2756000#3307"
+      ],
+      "hours": "",
+      "address": "嘉義市東區義教里義教街794號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [],
+      "id": "bfb78ec2a964",
+      "name": "中庄里健康小站",
+      "type": "社區健康小站(提供測量血壓與血糖服務)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2765041#6159"
+      ],
+      "hours": "",
+      "address": "嘉義市東區中庄里嘉北街189號(中庄里辦公處)",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [],
+      "id": "99523b1f7952",
+      "name": "芳安里健康小站",
+      "type": "社區健康小站(提供測量血壓與血糖服務)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2756000#3307"
+      ],
+      "hours": "",
+      "address": "嘉義市東區芳安里芳安路291號(里長服務處)",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [],
+      "id": "a75bad4d11d4",
+      "name": "圳頭里健康小站",
+      "type": "社區健康小站(提供測量血壓與血糖服務)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2756000"
+      ],
+      "hours": "",
+      "address": "嘉義市東區圳頭里盧厝160號之1(福正宮)",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [],
+      "id": "1d5ca7a7645d",
+      "name": "興村里健康小站",
+      "type": "社區健康小站(提供測量血壓與血糖服務)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2756000#3307"
+      ],
+      "hours": "",
+      "address": "嘉義市東區興村里活動中心(溪興街直走到底)",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [],
+      "id": "363c08e2048e",
+      "name": "興南里健康小站",
+      "type": "社區健康小站(提供測量血壓與血糖服務)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2756000#3307"
+      ],
+      "hours": "",
+      "address": "嘉義市東區興南里崇文街76號(興南里活動中心)",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [],
+      "id": "7f71bad3df43",
+      "name": "興仁里健康小站",
+      "type": "社區健康小站(提供測量血壓與血糖服務)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2756000#3307"
+      ],
+      "hours": "",
+      "address": "嘉義市東區興仁里軍輝路138號(里長服務處)",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [],
+      "id": "d9d61d31e31d",
+      "name": "嘉義基督教醫院-荖藤里健康小站",
+      "type": "社區健康小站(提供測量血壓與血糖服務)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2765041#6159"
+      ],
+      "hours": "",
+      "address": "嘉義市東區荖藤里荖藤宅29號(朝陽宮活動中心)",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [],
+      "id": "ee35be8cbb6b",
+      "name": "芳草里健康小站",
+      "type": "社區健康小站(提供測量血壓與血糖服務)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2756000#3307"
+      ],
+      "hours": "",
+      "address": "嘉義市東區芳草里芳安路73巷5號(新興古廟)",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [],
+      "id": "edf43e3648f1",
+      "name": "仁義里健康小站",
+      "type": "社區健康小站(提供測量血壓與血糖服務)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2756000#3307"
+      ],
+      "hours": "",
+      "address": "嘉義市東區仁義里嘉南街2號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [],
+      "id": "fb84256d593b",
+      "name": "新開里健康小站",
+      "type": "社區健康小站(提供測量血壓與血糖服務)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2756000#3307"
+      ],
+      "hours": "",
+      "address": "嘉義市東區新開里市宅街2號(南開宮)",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [],
+      "id": "d434bdfa6add",
+      "name": "王田里健康小站-五福街",
+      "type": "社區健康小站(提供測量血壓與血糖服務)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2756000#3307"
+      ],
+      "hours": "",
+      "address": "嘉義市東區王田里五福街119號(王田集會所/王田社區發展協會)",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [],
+      "id": "10a6660e56de",
+      "name": "後湖里健康小站",
+      "type": "社區健康小站(提供測量血壓與血糖服務)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2756000#3307"
+      ],
+      "hours": "",
+      "address": "嘉義市東區後湖里保義路60巷40號(後湖里活動中心)",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [],
+      "id": "8f9f5d508697",
+      "name": "長榮公園健康小站",
+      "type": "社區健康小站(提供測量血壓與血糖服務)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2756000#3307"
+      ],
+      "hours": "",
+      "address": "嘉義市東區太平里維新路與長榮街路口長榮公園(舊嘉義監獄斜對面)",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [],
+      "id": "28f961525ee2",
+      "name": "長竹里健康小站",
+      "type": "社區健康小站(提供測量血壓與血糖服務)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2756000#3307"
+      ],
+      "hours": "",
+      "address": "嘉義市東區長竹里大雅路二段60巷11號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [],
+      "id": "e8c2fc2b7439",
+      "name": "永和里健康小站",
+      "type": "社區健康小站(提供測量血壓與血糖服務)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2756000#3307"
+      ],
+      "hours": "",
+      "address": "嘉義市西區永和里集會所",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [],
+      "id": "590b52839ffb",
+      "name": "湖邊里健康小站",
+      "type": "社區健康小站(提供測量血壓與血糖服務)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2756000#3307"
+      ],
+      "hours": "",
+      "address": "嘉義市西區湖邊里興達路52號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [],
+      "id": "9930b6307a53",
+      "name": "翠岱里健康小站",
+      "type": "社區健康小站(提供測量血壓與血糖服務)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2756000#3307"
+      ],
+      "hours": "",
+      "address": "嘉義市西區翠岱里志昇街107號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [],
+      "id": "523845a98197",
+      "name": "保福里健康小站",
+      "type": "社區健康小站(提供測量血壓與血糖服務)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2756000#3307"
+      ],
+      "hours": "",
+      "address": "嘉義市西區保福里世賢路一段643號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [],
+      "id": "0bc1d31551fd",
+      "name": "文化里健康小站",
+      "type": "社區健康小站(提供測量血壓與血糖服務)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2765041#6159"
+      ],
+      "hours": "",
+      "address": "嘉義市西區文化里文化路81號(雅歌書房騎樓)",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [],
+      "id": "33cb30c177fa",
+      "name": "保安里健康小站",
+      "type": "社區健康小站(提供測量血壓與血糖服務)",
+      "pinned": false,
+      "contact": "",
+      "phones": [
+        "05-2756000#3307"
+      ],
+      "hours": "",
+      "address": "嘉義市西區保安里八德路396號",
+      "website": "",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [],
+      "id": "f1c5842a6621",
+      "name": "嘉義市友善生活資訊網",
+      "type": "社區健康小站(提供測量血壓與血糖服務)",
+      "pinned": false,
+      "contact": "",
+      "phones": [],
+      "hours": "",
+      "address": "",
+      "website": "https://sites.google.com/view/friendlychiayi",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [],
+      "id": "18b153855b7d",
+      "name": "嘉義市糖尿病共同照護網",
+      "type": "社區健康小站(提供測量血壓與血糖服務)",
+      "pinned": false,
+      "contact": "",
+      "phones": [],
+      "hours": "",
+      "address": "",
+      "website": "https://diabetes.cichb.gov.tw:4433/",
+      "note": "",
+      "enabled": true
+    },
+    {
+      "domains": [],
+      "id": "ea805c103559",
+      "name": "嘉義市社區資源整合站",
+      "type": "社區健康小站(提供測量血壓與血糖服務)",
+      "pinned": false,
+      "contact": "",
+      "phones": [],
+      "hours": "",
+      "address": "",
+      "website": "https://health.chiayi.gov.tw/hubtag/Default.aspx",
+      "note": "",
+      "enabled": true
+    }
+  ],
+  "materials": [],
+  "source": "嘉義市社區資源盤點表（嘉義市社區資源盤點表1128更新.xlsx / 嘉義市1003），公開資料，僅供示範；適用項目為示範用預設對應，請依實際情況調整"
+}
