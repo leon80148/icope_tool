@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-   (keep this line first: an older pip reads this file with the system code page and fails on the comments)
 # 執行期依賴（版本鎖定）。
 # ddddocr 在 Windows 的套件宣告會拉進非 headless 的 opencv-python（內含 GUI 元件、與 headless 版共用 cv2 目錄互相覆蓋），
 # 所以 ddddocr 另外用 --no-deps 安裝：

@@ -9,10 +9,14 @@ if (-not (Test-Path "venv\Scripts\python.exe")) {
 }
 $python = Join-Path $root "venv\Scripts\python.exe"
 
+# 原生指令失敗不會觸發 $ErrorActionPreference：每一步自己檢查，否則會一路跑到 pytest 才以「測試失敗」收場
 & $python -m pip install --disable-pip-version-check -q -r requirements-dev.txt
+if ($LASTEXITCODE -ne 0) { throw "安裝相依套件失敗（requirements-dev.txt）" }
 # ddddocr 的套件宣告在 Windows 會拉進非 headless 的 opencv-python，因此不裝它的依賴
 & $python -m pip install --disable-pip-version-check -q --no-deps ddddocr==1.6.1
+if ($LASTEXITCODE -ne 0) { throw "安裝 ddddocr 失敗" }
 & $python -m pip install --disable-pip-version-check -q --no-deps -e .
+if ($LASTEXITCODE -ne 0) { throw "安裝本專案失敗（pip install -e .）" }
 
 if (-not (Test-Path "icope_tool\resources\app.ico")) {
     & $python tools\make_icon.py

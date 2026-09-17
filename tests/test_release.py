@@ -29,6 +29,19 @@ def test_version_is_the_same_everywhere():
     assert project["license"] == "MIT" and (ROOT / "LICENSE").read_text(encoding="utf-8").startswith("MIT License")
 
 
+@pytest.mark.parametrize("name", ["requirements.txt", "requirements-dev.txt"])
+def test_requirements_files_can_be_read_by_an_old_pip_on_any_locale(name):
+    """python -m venv 附的舊版 pip 用系統編碼讀 requirements（GitHub 的 Windows runner 是 cp1252），
+    中文註解會讓它直接解碼失敗、什麼都沒裝。pip 認 PEP 263 的編碼宣告：有非 ASCII 內容就要在前兩行宣告 utf-8。"""
+    import re
+    data = (ROOT / name).read_bytes()
+    if data.isascii():
+        return
+    declared = [re.search(rb"coding[:=]\s*([-\w.]+)", line) for line in data.split(b"\n")[:2] if line.startswith(b"#")]
+    assert any(match and match.group(1).lower() == b"utf-8" for match in declared), name
+    data.decode("utf-8")
+
+
 def test_the_current_version_has_release_notes():
     notes = _tool().notes_for(f"v{__version__}", (ROOT / "CHANGELOG.md").read_text(encoding="utf-8"))
     assert "###" in notes and len(notes) > 200              # 真的有分類過的內容，不是空標題
