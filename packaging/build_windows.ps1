@@ -34,5 +34,9 @@ Copy-Item LICENSE dist\IcopeTool\LICENSE.txt -Force
 $version = (& $python -c "import icope_tool; print(icope_tool.__version__)").Trim()
 $zip = "dist\IcopeTool-$version-win64.zip"
 if (Test-Path $zip) { Remove-Item $zip }
-Compress-Archive -Path dist\IcopeTool -DestinationPath $zip
+# 不用 Compress-Archive：Windows PowerShell 5.1 的版本會把 zip 裡的路徑寫成反斜線（不符合 zip 規格），
+# 檔案總管解得開，但部分第三方解壓工具會解成一堆檔名含反斜線的檔案
+Add-Type -AssemblyName System.IO.Compression.FileSystem
+[System.IO.Compression.ZipFile]::CreateFromDirectory((Join-Path $root "dist\IcopeTool"), (Join-Path $root $zip),
+    [System.IO.Compression.CompressionLevel]::Optimal, $true)
 Write-Host "完成：$zip"
