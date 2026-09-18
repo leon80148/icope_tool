@@ -26,7 +26,7 @@ venv\Scripts\python toolselease_notes.py v<版本>          # 發佈前檢查�
 - 國健署密碼不可出現在畫面、log、錯誤訊息、設定包；稽核只記 `pid_tag`（sha256 前 8 碼），不記身分證與姓名。
 - 健保卡的出生日期只拿來在查詢結果旁核對年齡（`eligibility.age_in_year`，以年度計；`ui/messages.describe_age`）：和姓名一樣只存在記憶體（`HistoryEntry.birth_roc`），不進稽核、log 與任何檔案，而且只跟著讀卡當下的身分證走。年齡只是提醒，不改變國健署的判定與能按的按鈕。
 - `data/`（含 `auth/`）永不入版控。
-- 院所自己的設定包來源與成品放 `packs/`（git 忽略）：常有聯絡人姓名、手機與院所自製單張。`examples/` 會被打包發佈給所有使用者，只放公開資料。
+- 院所自己的設定包來源與成品放 `packs/`（git 忽略）：常有聯絡人姓名、手機與院所自製單張。`examples/` 會被打包發佈給所有使用者，只放公開資料。成品經使用者同意後可以附在 Release（安家診所的那份已附在 v1.1.1，檔名 `anchia-clinic-pack.zip`，PDF 的 `/Author` 已清掉）；來源 JSON 與 PDF 仍不進 git。
 - 使用說明的圖片（`icope_tool/resources/guide/`）只用 `tools/guide_images.py` 的示範資料產生，不拿真實資料夾截圖；改了畫面或文案就重跑並一起 commit。`help_dialog.py` 與 `docs/GUIDE.md` 共用同一批圖，是兩份各自的文字：改一邊要核對另一邊，連同圖說裡引用的數量。`tests/test_guide.py` 會檢查圖片引用，以及兩份說明引用的按鈕與訊息文字還在畫面上（改了畫面的字，要更新那份清單與兩份說明）；圖片清不清楚、編號有沒有蓋到字要自己逐張看。`docs/INSTALL.md` 會被複製進發佈資料夾，裡面不要放圖片連結。
 - `QTextBrowser` 的 `line-height: 150%` 套到只有圖片的段落時，圖片下面會多出半張圖高的空白：圖片段落另外設 `line-height: 100%`（`help_dialog._figure`）。
 - 登入失敗預設關閉：只有訊息含「驗證碼」才重試，其他失敗停用自動登入。改這段要保留 `test_hpdcs_client.py` 的帳號鎖定測試。

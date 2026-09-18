@@ -155,7 +155,11 @@ examples/                     嘉義市社區資源示範資料（271 筆）
 
 ## 示範資料
 
-`examples/chiayi-city-resources.json` 整理自嘉義市政府衛生局公開的「社區資源盤點表」，只供試用與示範；各單位的電話與服務內容請以該單位公告為準。院所自己的清單（常含聯絡人姓名與手機）請放在 git 忽略的 `packs/`，不要放進 `examples/`——那個資料夾會跟著程式發佈給所有人。
+`examples/chiayi-city-resources.json` 整理自嘉義市政府衛生局公開的「社區資源盤點表」，只供試用與示範；各單位的電話與服務內容請以該單位公告為準。
+
+想看一份院所實際整理好的設定包（含衛教單張 PDF）：Releases 附有 [anchia-clinic-pack.zip](https://github.com/leon80148/icope_tool/releases/download/v1.1.1/anchia-clinic-pack.zip)（嘉義市一家基層診所的 15 筆轉介資源與 4 份衛教單張），用「設定 › 匯出／匯入 › 選擇設定包… › 合併」匯入，匯入後再自己設院所預設。
+
+院所自己的清單（常含聯絡人姓名與手機）請放在 git 忽略的 `packs/`，不要放進 `examples/`——那個資料夾會跟著程式發佈給所有人；要分享時再決定是否附到 Release。
 
 ## 授權與第三方
 
