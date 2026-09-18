@@ -59,6 +59,18 @@ def captcha_gif() -> bytes:
     return buffer.getvalue()
 
 
+def demo_plans() -> tuple[str, ...]:
+    """示範用的計畫代碼：和程式一樣依今天的民國年推導，截圖不會寫死年份。"""
+    from icope_tool.models import HpdcsPrefs
+    from icope_tool.services.hpdcs.plans import plan_codes
+    return plan_codes(HpdcsPrefs(), datetime.now().date())
+
+
+def plan_label(code: str) -> str:
+    from icope_tool.services.hpdcs.plans import plan_label as label
+    return label(code)
+
+
 class FakeHpdcs:
     def __init__(self, configured: bool = True):
         self.configured = configured
@@ -70,8 +82,7 @@ class FakeHpdcs:
                 "logged_in": self.logged_in, "auto_login_disabled": self.disabled,
                 "last_login_at": datetime.now().isoformat(timespec="seconds") if self.logged_in else None,
                 "last_error": None, "ocr_available": True,
-                "active_plans": [{"plan": "EFA_115", "label": "115 年度正式計畫"},
-                                 {"plan": "EFA_Pilot_115", "label": "115 年度試辦計畫"}]}
+                "active_plans": [{"plan": p, "label": plan_label(p)} for p in demo_plans()]}
 
     def query_icope(self, *args, **kwargs):  # noqa: D401
         raise RuntimeError("snapshots drive the UI directly")
@@ -269,12 +280,13 @@ def main() -> int:
     query._on_id_changed(query.id_input.text())
 
     now = datetime.now()
-    can = IcopeResult([PlanResult("EFA_115", "can_assess", "今年可以繼續評估：O，可以繼續評估！"),
-                       PlanResult("EFA_Pilot_115", "can_assess", "今年可以繼續評估：O，可以繼續評估！")])
-    done = IcopeResult([PlanResult("EFA_115", "done", "今年可以繼續評估：X，該身分證已被登錄！[ICOPE評估表]"),
-                        PlanResult("EFA_Pilot_115", "done_other", "今年無法繼續評估：X，該身分證已被其它計畫登錄！")])
-    blocked = IcopeResult([PlanResult("EFA_115", "blocked", "今年無法繼續評估：X，年齡不符合本計畫收案條件！"),
-                           PlanResult("EFA_Pilot_115", "blocked", "今年無法繼續評估：X，年齡不符合本計畫收案條件！")])
+    official, pilot = plans[0], plans[1]
+    can = IcopeResult([PlanResult(official, "can_assess", "今年可以繼續評估：O，可以繼續評估！"),
+                       PlanResult(pilot, "can_assess", "今年可以繼續評估：O，可以繼續評估！")])
+    done = IcopeResult([PlanResult(official, "done", "今年可以繼續評估：X，該身分證已被登錄！[ICOPE評估表]"),
+                        PlanResult(pilot, "done_other", "今年無法繼續評估：X，該身分證已被其它計畫登錄！")])
+    blocked = IcopeResult([PlanResult(official, "blocked", "今年無法繼續評估：X，年齡不符合本計畫收案條件！"),
+                           PlanResult(pilot, "blocked", "今年無法繼續評估：X，年齡不符合本計畫收案條件！")])
     ctx.add_history(HistoryEntry(now - timedelta(days=1), DEMO_IDS["張美玉"], "張美玉", can, plans=plans))
     ctx.add_history(HistoryEntry(now, DEMO_IDS["陳秀英"], "陳秀英", blocked, plans=plans))
     ctx.add_history(HistoryEntry(now, DEMO_IDS["林阿土"], "林阿土", done, plans=plans))

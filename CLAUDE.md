@@ -12,7 +12,7 @@ venv\Scripts\python tools\guide_images.py [--only daily-3-print]                
 venv\Scripts\python tools\make_clinic_pack.py <清單.json> <PDF 資料夾> <輸出.zip>   # 院所自己的設定包
 powershell -ExecutionPolicy Bypass -File packaging\build_windows.ps1            # 打包
 dist\IcopeTool\IcopeTool.exe --self-test <out>          # 打包後自我檢測
-venv\Scripts\python toolselease_notes.py v<版本>          # 發佈前檢查：tag 與版本一致、CHANGELOG 有這一版
+venv\Scripts\python tools\release_notes.py v<版本>          # 發佈前檢查：tag 與版本一致、CHANGELOG 有這一版
 ```
 
 安裝依賴時 **ddddocr 一定要 `--no-deps`**：它的宣告會拉進非 headless 的 opencv-python，與 PySide6 衝突。
@@ -30,6 +30,7 @@ venv\Scripts\python toolselease_notes.py v<版本>          # 發佈前檢查�
 - 使用說明的圖片（`icope_tool/resources/guide/`）只用 `tools/guide_images.py` 的示範資料產生，不拿真實資料夾截圖；改了畫面或文案就重跑並一起 commit。`help_dialog.py` 與 `docs/GUIDE.md` 共用同一批圖，是兩份各自的文字：改一邊要核對另一邊，連同圖說裡引用的數量。`tests/test_guide.py` 會檢查圖片引用，以及兩份說明引用的按鈕與訊息文字還在畫面上（改了畫面的字，要更新那份清單與兩份說明）；圖片清不清楚、編號有沒有蓋到字要自己逐張看。`docs/INSTALL.md` 會被複製進發佈資料夾，裡面不要放圖片連結。
 - `QTextBrowser` 的 `line-height: 150%` 套到只有圖片的段落時，圖片下面會多出半張圖高的空白：圖片段落另外設 `line-height: 100%`（`help_dialog._figure`）。
 - 登入失敗預設關閉：只有訊息含「驗證碼」才重試，其他失敗停用自動登入。改這段要保留 `test_hpdcs_client.py` 的帳號鎖定測試。
+- 計畫代碼的命名（`EFA_{年}`／`EFA_Pilot_{年}`）只寫在 `services/hpdcs/plans.py` 的 `PlanCode._TEMPLATES`；畫面、工具、測試都從它推導，不得寫死年份。查詢頁 404 或被導回首頁是「計畫不存在」，不是 session 失效：一次查詢最多一次復原（先 GET Default.aspx 重建 context，再沿用共用 cookie，最後才登入），缺頁不得多花一次登入。每年 1 月照 `docs/hpdcs_protocol.md` 第四節側錄並補 fixture。
 - `HpdcsClient`、`CredentialStore` 用建構子注入路徑與 provider，不讀環境變數、不用模組層單例。
 - 共用資料夾：`DataStore` 只做單筆操作（重讀 → 套用 → 原子寫入）；UI 不整批覆寫清單。
 - 背景工作用 `run_in_background`（`ui/workers.py`）或 `run_with_progress`（`ui/progress.py`）；`on_finished` 會在成功／失敗處理之前執行。

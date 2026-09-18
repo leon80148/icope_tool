@@ -1,10 +1,10 @@
 from __future__ import annotations
 
-from datetime import date, datetime
+from datetime import datetime
 
 from PySide6.QtWidgets import QCheckBox, QGridLayout, QLineEdit, QMessageBox, QVBoxLayout, QWidget
 
-from icope_tool.services.hpdcs.plans import parse_custom_plans, plan_label, roc_year
+from icope_tool.services.hpdcs.plans import PlanCode, parse_custom_plans, roc_year
 from icope_tool.store import StoreError
 from icope_tool.ui.context import AppContext
 from icope_tool.ui.dialogs.base import field_label
@@ -44,9 +44,8 @@ class HpdcsTab(QWidget):
         # ---- 計畫 ----
         plan_card = Card("要查詢的計畫", "國健署依年度與計畫分開登錄。每年 1 月 1 日會自動換成新年度，不必改設定。", "list-checks")
         layout.addWidget(plan_card)
-        year = roc_year(date.today())
-        self.official = QCheckBox(f"正式計畫（{plan_label(f'EFA_{year}')}，代碼 EFA_{year}）")
-        self.pilot = QCheckBox(f"試辦計畫（{plan_label(f'EFA_Pilot_{year}')}，代碼 EFA_Pilot_{year}）")
+        self.official = QCheckBox()
+        self.pilot = QCheckBox()
         plan_card.add(self.official)
         plan_card.add(self.pilot)
         plan_card.add(label("只要任一計畫顯示已登錄，就會判定「今年已經做過」。沒有參與試辦計畫的診所可以取消勾選。",
@@ -60,7 +59,6 @@ class HpdcsTab(QWidget):
         advanced_layout.setSpacing(6)
         self.custom = QLineEdit()
         advanced_layout.addWidget(field_label("自訂計畫代碼", buddy=self.custom))
-        self.custom.setPlaceholderText("例如：EFA_116, EFA_Pilot_116（留空＝使用上面的勾選）")
         self.custom.setAccessibleName("自訂計畫代碼")
         advanced_layout.addWidget(self.custom)
         self.custom_hint = label("只有國健署改了網址命名方式時才需要填寫；填了會取代上面的勾選。", "caption", wrap=True)
@@ -91,6 +89,15 @@ class HpdcsTab(QWidget):
     def showEvent(self, event):
         super().showEvent(event)
         self.refresh_status()
+        self._refresh_plan_labels()          # 跨年沒關程式：切到這一頁時標籤跟著換年度
+
+    def _refresh_plan_labels(self) -> None:
+        """年度與代碼都從 PlanCode 推導（命名規則只在 plans.py），用注入的時鐘算今年。"""
+        year = roc_year(self.ctx.today())
+        official, pilot = PlanCode.make("official", year), PlanCode.make("pilot", year)
+        self.official.setText(f"正式計畫（{official.label}，代碼 {official.code}）")
+        self.pilot.setText(f"試辦計畫（{pilot.label}，代碼 {pilot.code}）")
+        self.custom.setPlaceholderText(f"例如：{official.code}, {pilot.code}（留空＝使用上面的勾選）")
 
     def refresh_status(self) -> None:
         status = self.ctx.hpdcs.status()
@@ -144,6 +151,7 @@ class HpdcsTab(QWidget):
         return self.official.isChecked(), self.pilot.isChecked(), self.custom.text().strip()
 
     def load_plans(self) -> None:
+        self._refresh_plan_labels()
         prefs = self.ctx.hpdcs_prefs()
         self._loaded = (prefs.official, prefs.pilot, ", ".join(prefs.custom_plans))
         for widget, value in ((self.official, prefs.official), (self.pilot, prefs.pilot)):

@@ -189,8 +189,8 @@ def main(argv: list[str] | None = None) -> int:
 
     # ------------------------------------------------------------------ 篩檢查詢 → 製作轉介衛教單
     window.go("query")
-    result = IcopeResult([PlanResult("EFA_115", "can_assess", "今年可以繼續評估：O，可以繼續評估！"),
-                          PlanResult("EFA_Pilot_115", "can_assess", "今年可以繼續評估：O，可以繼續評估！")])
+    result = IcopeResult([PlanResult(plan, "can_assess", "今年可以繼續評估：O，可以繼續評估！")
+                          for plan in ctx.active_plans()])          # 依今天的年度推導，圖不會寫死 115
     ctx.set_patient(DEMO_IDS["王小明"], "王小明")
     entry = HistoryEntry(datetime.now(), DEMO_IDS["王小明"], "王小明", result, plans=ctx.active_plans(),
                          birth_roc="0400315")          # 像讀過健保卡一樣：結果上方會有年齡核對那一行

@@ -77,7 +77,7 @@ IcopeTool.exe（PySide6 桌面程式，單一程序）
 ## 國健署查詢（`services/hpdcs`）
 
 - 登入：`POST /Login.ashx`（帳號、密碼、5 碼驗證碼）→ `GET /Default.aspx`。驗證碼先自動辨識，只在回應訊息含「驗證碼」時重試；其他登入失敗一律停用自動登入，直到重新儲存帳密（避免帳號被鎖）。
-- 查詢：`/EardlyFunction_V2/{計畫}/EF2_CheckIDExist.aspx`，解析結果為 已登錄／已在其他計畫登錄／可評估／無法評估。計畫代碼依民國年自動推導（`EFA_115`、`EFA_Pilot_115`）。
+- 查詢：`/EardlyFunction_V2/{計畫}/EF2_CheckIDExist.aspx`，解析結果為 已登錄／已在其他計畫登錄／可評估／無法評估。計畫代碼依民國年自動推導（`EFA_115`、`EFA_Pilot_115`），命名規則只在 `plans.py` 的 `PlanCode`；找不到某個計畫的查詢頁（新年度尚未開放、命名改了）時以 `unavailable` 回報、一次查詢最多一次復原，全部找不到才報錯。
 - 登入 cookie 存在共用資料夾，多台電腦共用同一個登入狀態；逾時時先改用其他電腦較新的 cookie，仍失效才重新登入。
 - 同一天同一人的結果暫存；查詢可以取消（每個請求前與等待鎖時檢查）。
 - 協定細節與實際回應範本見 `docs/hpdcs_protocol.md` 與 `tests/fixtures/hpdcs/`。

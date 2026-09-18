@@ -11,7 +11,6 @@ from icope_tool.models import Resource
 from icope_tool.services.hpdcs.client import CredentialError, IcopeResult, NetworkError, PlanResult
 from icope_tool.store import DataStore, LocalConfigStore
 from icope_tool.ui.context import AppContext, HistoryEntry
-from icope_tool.ui.query_page import plans_summary
 from tests.test_store import make_pdf
 
 
@@ -94,13 +93,6 @@ def env(tmp_path, qtbot):
     return window, ctx, store, fake
 
 
-def test_plans_summary():
-    assert plans_summary(("EFA_115", "EFA_Pilot_115")) == " 115 年度正式、試辦計畫"
-    assert plans_summary(("EFA_115",)) == " 115 年度正式計畫"
-    assert plans_summary(()) == "計畫：尚未選擇"
-    assert plans_summary(("EFA_Special_120",)).startswith("計畫：")
-
-
 def test_sidebar_spells_the_display_name(env):
     from PySide6.QtWidgets import QLabel
 
@@ -149,6 +141,41 @@ def test_query_errors_offer_the_right_next_step(env, qtbot):
     page.start_query(force=True)
     qtbot.waitUntil(lambda: not page.querying, timeout=5000)
     assert "連不上" in page.error_banner._title.text()
+
+
+def test_unavailable_plan_shows_chip_and_caveat(env, qtbot):
+    """新年度只開了正式計畫的頁面：判定照有回答的計畫，找不到的那個用 chip 標出來、說明提醒按重新查詢會再試。"""
+    from PySide6.QtWidgets import QLabel
+
+    from icope_tool.services.hpdcs.client import UNAVAILABLE_TEXT
+    window, _ctx, _store, fake = env
+    page = window.pages["query"]
+    fake.next = IcopeResult([PlanResult("EFA_116", "can_assess", "今年可以繼續評估：O，可以繼續評估！"),
+                             PlanResult("EFA_Pilot_116", "unavailable", raw=UNAVAILABLE_TEXT["home"])])
+    page.id_input.setText("A123456789")
+    page.start_query()
+    qtbot.waitUntil(lambda: not page.querying, timeout=5000)
+    assert "可以進行評估" in page.verdict._title.text()
+    assert "116 年度試辦計畫" in page.verdict._text.text() and "找不到查詢頁" in page.verdict._text.text()
+    assert "重新查詢" in page.verdict._text.text()
+    chips = [w.text() for w in page.result_view.findChildren(QLabel) if w.text() in ("找不到查詢頁", "可以評估")]
+    assert sorted(chips) == ["可以評估", "找不到查詢頁"]
+
+
+def test_all_plans_unavailable_shows_a_clear_error_with_both_actions(env, qtbot):
+    from icope_tool.services.hpdcs.client import PlanUnavailable
+    window, ctx, _store, fake = env
+    page = window.pages["query"]
+    fake.next = PlanUnavailable(("EFA_116", "EFA_Pilot_116"))
+    page.id_input.setText("A123456789")
+    page.start_query()
+    qtbot.waitUntil(lambda: not page.querying, timeout=5000)
+    assert page.result_stack.currentWidget() is page.error_view
+    assert "找不到" in page.error_banner._title.text()
+    assert "EFA_116" in page.error_banner._text.text() and "還沒開放" in page.error_banner._text.text()
+    labels = [b.text().strip() for b in page.error_banner.findChildren(type(page.card_button))]
+    assert "開啟國健署網站" in labels and "前往設定" in labels
+    assert ctx.history[0].result is None and "找不到" in ctx.history[0].error
 
 
 def test_history_row_click_restores_result(env, qtbot):
@@ -214,6 +241,26 @@ def test_clinic_tab_saves(env, qtbot):
     assert not tab.name_error.isHidden() and store.load_settings().clinic.name == "測試診所"
     tab.load()          # 還原，避免關閉視窗時跳出「尚未儲存」確認框
     assert not tab.has_unsaved_changes()
+
+
+def test_hpdcs_tab_labels_follow_the_injected_clock(env, qtbot):
+    """勾選標籤與提示文字用注入的時鐘算年度，而且每次載入都重算：程式跨年開著不關也會換成新年度。"""
+    from datetime import date
+
+    from PySide6.QtWidgets import QWidget
+
+    from icope_tool.ui.settings.hpdcs_tab import HpdcsTab
+    from icope_tool.ui.widgets import Toast
+    window, ctx, store, fake = env
+    future = AppContext(ctx.local_store, store.root, ctx.audit, hpdcs_factory=lambda _c: fake,
+                        today_fn=lambda: date(2027, 1, 1))
+    holder = QWidget()
+    qtbot.addWidget(holder)
+    tab = HpdcsTab(future, Toast(holder), holder)
+    assert "EFA_116" in tab.official.text() and "116 年度正式計畫" in tab.official.text()
+    assert "EFA_Pilot_116" in tab.pilot.text()
+    assert "EFA_116" in tab.custom.placeholderText() and "EFA_117" not in tab.custom.placeholderText()
+    assert future.today() == date(2027, 1, 1)
 
 
 def test_hpdcs_tab_requires_a_plan(env, qtbot):
