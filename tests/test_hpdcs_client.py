@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import datetime as dt
 import json
+import re
 import time
 from pathlib import Path
 
@@ -34,12 +35,16 @@ def _fix(name: str) -> str:
     return (FIX / name).read_text(encoding="utf-8")
 
 
+_PLAN_IN_URL = re.compile(r"/EardlyFunction_V2/([^/]+)/")
+
+
 class FakeResponse:
-    def __init__(self, text="", content=None, json_data=None, headers=None):
+    def __init__(self, text="", content=None, json_data=None, headers=None, status_code=200):
         self.text = text
         self.content = content if content is not None else text.encode("utf-8")
         self._json = json_data
         self.headers = headers or {}
+        self.status_code = status_code
 
     def json(self):
         if self._json is None:
@@ -59,7 +64,8 @@ class FakeSession:
     """可編程的假 requests.Session。以 sValidateCode 是否等於 correct_captcha 決定登入結果。"""
 
     def __init__(self, correct_captcha="55555", password_ok=True, pid_result=None,
-                 expired_on_check=0, home_on_check=0, home_on_post=0, set_cookie_on_login=False):
+                 expired_on_check=0, home_on_check=0, home_on_post=0, set_cookie_on_login=False,
+                 unknown_plans=None, home_expired_until_login=False):
         self.headers = {}
         self.cookies = RequestsCookieJar()
         self.correct_captcha = correct_captcha
@@ -69,14 +75,23 @@ class FakeSession:
         self.home_on_check = home_on_check
         self.home_on_post = home_on_post
         self.set_cookie_on_login = set_cookie_on_login
+        # 不存在的計畫頁：代碼 → 網站的反應（"404"／"500"／"home" 導回已登入的首頁／"login" 導回登入頁）
+        self.unknown_plans = unknown_plans or {}
+        # Default.aspx 在成功登入之前顯示登入頁（沿用來的 cookie 已失效）
+        self.home_expired_until_login = home_expired_until_login
         self.calls = []
         self._check_get_count = 0
         self._check_post_count = 0
+        self._logged_in_once = False
 
     def request(self, method, url, **kwargs):
         self.calls.append((method, url, kwargs))
         m = method.lower()
-        if url.endswith("/index.aspx") or url.endswith("/Default.aspx"):
+        if url.endswith("/index.aspx"):
+            return FakeResponse(text=_fix("home_no_form.html"))
+        if url.endswith("/Default.aspx"):
+            if self.home_expired_until_login and not self._logged_in_once:
+                return FakeResponse(text=_fix("session_expired.html"))
             return FakeResponse(text=_fix("home_no_form.html"))
         if "/ValidateCode.aspx" in url:
             return FakeResponse(content=b"GIF89a-fake-bytes", headers={"content-type": "image/gif"})
@@ -88,8 +103,20 @@ class FakeSession:
                 return FakeResponse(json_data={"Result": "0", "Msg": "帳號或密碼錯誤"})
             if self.set_cookie_on_login:
                 self.cookies.set("ASPSESS", "sess-xyz", domain="hpdcs.hpa.gov.tw", path="/")
+            self._logged_in_once = True
             return FakeResponse(json_data={"Result": "1", "Msg": ""})
         if "EF2_CheckIDExist.aspx" in url:
+            plan = _PLAN_IN_URL.search(url).group(1)
+            mode = self.unknown_plans.get(plan)
+            if mode == "404":
+                return FakeResponse(text="<html><head><title>404 - File or directory not found.</title></head></html>",
+                                    status_code=404)
+            if mode == "500":
+                return FakeResponse(text="<html><head><title>Server Error</title></head></html>", status_code=500)
+            if mode == "home":
+                return FakeResponse(text=_fix("home_no_form.html"))
+            if mode == "login":
+                return FakeResponse(text=_fix("session_expired.html"))
             if m == "get":
                 self._check_get_count += 1
                 if self._check_get_count <= self.expired_on_check:
@@ -102,7 +129,6 @@ class FakeSession:
                 return FakeResponse(text=_fix("home_no_form.html"))
             data = kwargs.get("data", {})
             pid = data.get(hc.TBPID_FIELD, "")
-            plan = next((p for p in ("EFA_Pilot_115", "EFA_115", "EFA_114") if "/" + p + "/" in url), None)
             outcome = self.pid_result.get(pid, "notdone")
             if isinstance(outcome, dict):
                 outcome = outcome.get(plan, "notdone")
@@ -132,6 +158,12 @@ def make_client(session, ocr_code="55555", plans=("EFA_115", "EFA_Pilot_115"),
 
 def login_posts(session):
     return [c for c in session.calls if c[1].endswith("/Login.ashx")]
+
+
+def urls(session, contains: str, method: str | None = None) -> list[int]:
+    """呼叫序列中符合條件的索引（用來斷言「A 在 B 之間」）。"""
+    return [i for i, (m, url, _k) in enumerate(session.calls)
+            if contains in url and (method is None or m.lower() == method)]
 
 
 # ---------------------------------------------------------------------------
@@ -237,18 +269,124 @@ def test_session_expired_twice_gives_up():
         client.query_icope("A123456789")
 
 
-def test_check_redirected_to_home_triggers_relogin():
+def test_home_bounce_reestablishes_context_without_relogin():
+    """查詢頁被導回已登入的首頁：是 context 沒建立（協定文件一.5），GET 一次 Default.aspx 就好，不必重新登入。"""
     session = FakeSession(correct_captcha="55555", home_on_check=1, pid_result={"A123456789": "done"})
     client = make_client(session, plans=("EFA_115",))
     assert client.query_icope("A123456789").done_this_year is True
-    assert len(login_posts(session)) == 2
+    assert len(login_posts(session)) == 1
+    first, second = urls(session, "EF2_CheckIDExist.aspx", "get")[:2]
+    assert any(first < i < second for i in urls(session, "/Default.aspx"))
 
 
 def test_mid_query_session_loss_self_heals():
     session = FakeSession(correct_captcha="55555", home_on_post=1, pid_result={"A123456789": "done"})
     client = make_client(session, plans=("EFA_115",))
     assert client.query_icope("A123456789").done_this_year is True
+    assert len(login_posts(session)) == 1
+    first, second = urls(session, "EF2_CheckIDExist.aspx", "post")[:2]
+    assert any(first < i < second for i in urls(session, "/Default.aspx"))
+
+
+# ---------------------------------------------------------------------------
+# 找不到計畫的查詢頁（新年度尚未開放、命名改了）：不是 session 失效，不多花登入
+# ---------------------------------------------------------------------------
+PLANS_116 = ("EFA_116", "EFA_Pilot_116")
+
+
+def test_missing_plan_404_is_unavailable_without_recovery():
+    session = FakeSession(unknown_plans={"EFA_116": "404"})
+    result = make_client(session, plans=PLANS_116).query_icope("A123456789")
+    assert [p.status for p in result.plans] == ["unavailable", "can_assess"]
+    assert result.verdict == "can_assess" and result.partial
+    assert [p.plan for p in result.unavailable_plans] == ["EFA_116"]
+    assert "HTTP 404" in result.plans[0].message
+    assert len(login_posts(session)) == 1
+    assert len(urls(session, "/Default.aspx")) == 1                      # 只有登入後那一次，沒有多餘的復原
+
+
+def test_missing_plan_bounced_home_uses_sibling_as_proof():
+    session = FakeSession(unknown_plans={"EFA_Pilot_116": "home"})
+    result = make_client(session, plans=PLANS_116).query_icope("A123456789")
+    assert [p.status for p in result.plans] == ["can_assess", "unavailable"]
+    assert "導回首頁" in result.plans[1].message
+    assert len(login_posts(session)) == 1 and len(urls(session, "/Default.aspx")) == 1
+
+
+def test_all_plans_bounced_home_reestablishes_context_then_raises_plan_unavailable():
+    session = FakeSession(unknown_plans={"EFA_116": "home", "EFA_Pilot_116": "home"})
+    with pytest.raises(hc.PlanUnavailable) as error:
+        make_client(session, plans=PLANS_116).query_icope("A123456789")
+    assert error.value.plans == PLANS_116
+    assert len(login_posts(session)) == 1
+    assert len(urls(session, "/Default.aspx")) == 2                      # 登入後一次＋重建 context 一次
+    assert len(urls(session, "EF2_CheckIDExist.aspx", "get")) == 4       # 兩個計畫各試兩次
+
+
+def test_missing_plan_never_costs_a_second_login():
+    session = FakeSession(unknown_plans={"EFA_116": "home", "EFA_Pilot_116": "home"})
+    client = make_client(session, plans=PLANS_116)
+    for pid in ("A123456789", "B123456780"):
+        with pytest.raises(hc.PlanUnavailable):
+            client.query_icope(pid)
+    assert len(login_posts(session)) == 1
+    assert client.status()["logged_in"] is True
+
+
+def test_missing_plan_redirected_to_login_is_bounded_to_one_recovery_login():
+    """導回登入頁分不出「缺頁」和「session 失效」（沒側錄過）：最多重登一次就放棄，維持原本的訊息。"""
+    session = FakeSession(unknown_plans={"EFA_116": "login", "EFA_Pilot_116": "login"})
+    with pytest.raises(hc.SessionExpired):
+        make_client(session, plans=PLANS_116).query_icope("A123456789")
     assert len(login_posts(session)) == 2
+
+
+def test_home_bounce_with_dead_adopted_session_logs_in_once(tmp_path):
+    """沿用來的 cookie 其實已失效：查詢頁導回首頁 → Default.aspx 看到登入頁 → 登入一次 → 成功。"""
+    ck = tmp_path / "ck.json"
+    make_client(FakeSession(set_cookie_on_login=True), plans=("EFA_116",), cookie_path=ck).query_icope("A123456789")
+    session = FakeSession(set_cookie_on_login=True, home_on_check=1, home_expired_until_login=True,
+                          pid_result={"A123456789": "done"})
+    client = make_client(session, plans=("EFA_116",), cookie_path=ck)
+    assert client.query_icope("A123456789").done_this_year is True
+    assert len(login_posts(session)) == 1
+
+
+def test_missing_plan_after_adopting_another_machines_cookie_does_not_log_in(tmp_path):
+    """別台電腦剛登入過的 cookie 一定已建好 context：拿它重試還是導回首頁，就是頁面不在，不能再登入把對方踢掉。"""
+    ck = tmp_path / "ck.json"
+    make_client(FakeSession(set_cookie_on_login=True), plans=("EFA_116",), cookie_path=ck).query_icope("A123456789")
+    session = FakeSession(set_cookie_on_login=True, home_expired_until_login=True,
+                          unknown_plans={"EFA_116": "home"})
+    client = make_client(session, plans=("EFA_116",), cookie_path=ck)
+    client._session = session                            # 這台電腦自己的舊 session（已失效）
+    client._logged_in = True
+    with pytest.raises(hc.PlanUnavailable):
+        client.query_icope("A123456789", force=True)
+    assert len(login_posts(session)) == 0
+
+
+def test_check_page_5xx_is_network_error():
+    session = FakeSession(unknown_plans={"EFA_116": "500"})
+    with pytest.raises(hc.NetworkError):
+        make_client(session, plans=PLANS_116).query_icope("A123456789")
+
+
+def test_partial_result_is_cached_for_the_day():
+    session = FakeSession(unknown_plans={"EFA_Pilot_116": "home"})
+    client = make_client(session, plans=PLANS_116)
+    first = client.query_icope("A123456789")
+    calls = len(session.calls)
+    second = client.query_icope("A123456789")
+    assert first.partial and second.cached and len(session.calls) == calls
+
+
+def test_icope_result_refuses_all_unavailable():
+    with pytest.raises(ValueError):
+        hc.IcopeResult([PlanResult("EFA_116", "unavailable", raw="x"), PlanResult("EFA_Pilot_116", "unavailable", raw="x")])
+    mixed = hc.IcopeResult([PlanResult("EFA_116", "unavailable", raw="x"), PlanResult("EFA_Pilot_116", "done", raw="done")])
+    assert mixed.verdict == "done" and mixed.partial and [p.plan for p in mixed.unavailable_plans] == ["EFA_116"]
+    assert not hc.IcopeResult([PlanResult("EFA_116", "can_assess", raw="O")]).partial
 
 
 def test_connection_error_retries_once():

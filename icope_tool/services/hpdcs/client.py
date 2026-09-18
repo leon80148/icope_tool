@@ -43,6 +43,13 @@ LOGIN_API = "/Login.ashx"
 DEFAULT_PATH = "/Default.aspx"      # 登入後須先訪問，建立 session context
 CAPTCHA_PATH = "/ValidateCode.aspx"
 CHECK_PATH_TMPL = "/EardlyFunction_V2/{plan}/EF2_CheckIDExist.aspx"   # "Eardly" 為官方拼字
+MISSING_STATUSES = (404, 410)
+# 找不到計畫查詢頁時給使用者看的原因（不含「，」：PlanResult.message 會從第一個「，」之後取說明）
+UNAVAILABLE_TEXT = {
+    "missing": "國健署系統沒有這個計畫的查詢頁（HTTP 404）",
+    "home": "國健署系統沒有這個計畫的查詢頁（開啟時被導回首頁）",
+    "login": "國健署系統沒有這個計畫的查詢頁（開啟時被導回登入頁）",
+}
 
 TBPID_FIELD = "ctl00$ContentPlaceHolder1$TBPID"
 TBPID_ID = "ContentPlaceHolder1_TBPID"
@@ -89,7 +96,19 @@ class CaptchaManualRequired(HpdcsError):
 
 
 class SessionExpired(HpdcsError):
-    """查詢時發現 session 已過期。"""
+    """查詢時發現 session 已過期。kind：login（看到登入頁）／home（仍登入、但被導回沒有表單的首頁）。"""
+
+    def __init__(self, message: str, kind: str = "login"):
+        super().__init__(message)
+        self.kind = kind
+
+
+class PlanUnavailable(HpdcsError):
+    """要查的計畫沒有一個找得到查詢頁：新年度的計畫還沒開放，或計畫代碼的命名改了。"""
+
+    def __init__(self, plans: tuple[str, ...]):
+        super().__init__("國健署系統目前沒有這些計畫的查詢頁：" + "、".join(plans))
+        self.plans = tuple(plans)
 
 
 class NetworkError(HpdcsError):
@@ -116,7 +135,7 @@ class QueryCancelled(HpdcsError):
 # 結果
 # =============================================================================
 class PlanResult:
-    """單一計畫的檢核結果。status：done / done_other / can_assess / blocked。"""
+    """單一計畫的檢核結果。status：done / done_other / can_assess / blocked / unavailable（找不到查詢頁）。"""
 
     __slots__ = ("plan", "status", "raw")
 
@@ -142,6 +161,11 @@ class PlanResult:
         return self.status in ("done", "done_other")
 
     @property
+    def answered(self) -> bool:
+        """國健署真的回答了這個計畫（找不到查詢頁的不算）。"""
+        return self.status != "unavailable"
+
+    @property
     def message(self) -> str:
         """hpdcs 原文的說明部分（去掉「今年…：X，」前綴與結尾驚嘆號）。"""
         text = (self.raw or "").replace("[ICOPE評估表]", "").strip()
@@ -156,6 +180,8 @@ class IcopeResult:
     __slots__ = ("done_this_year", "can_assess_any", "plans", "cached", "checked_at")
 
     def __init__(self, plans: list[PlanResult], cached: bool = False, checked_at: datetime | None = None):
+        if plans and not any(p.answered for p in plans):
+            raise ValueError("沒有任何計畫給出答案，不能當成查詢結果（應該丟 PlanUnavailable）")
         self.plans = plans
         self.done_this_year = any(p.counts_as_done for p in plans)
         self.can_assess_any = any(p.can_assess for p in plans)
@@ -164,12 +190,21 @@ class IcopeResult:
 
     @property
     def verdict(self) -> str:
-        """done（今年已做過）/ can_assess（可以做）/ blocked（無法做，非已做）。"""
+        """done（今年已做過）/ can_assess（可以做）/ blocked（無法做，非已做）。找不到查詢頁的計畫不計入。"""
         if self.done_this_year:
             return "done"
         if self.can_assess_any:
             return "can_assess"
         return "blocked"
+
+    @property
+    def unavailable_plans(self) -> list[PlanResult]:
+        return [p for p in self.plans if not p.answered]
+
+    @property
+    def partial(self) -> bool:
+        """有計畫找不到查詢頁：判定只根據有回答的計畫。"""
+        return bool(self.unavailable_plans)
 
 
 def pid_key(person_id: str) -> str:
@@ -344,15 +379,13 @@ class HpdcsClient:
             else:
                 self._ensure_login(deadline)
 
-            results = []
-            for plan in plans:
-                self._check_deadline(deadline)
-                try:
-                    result = self._check_one_plan(plan, person_id, deadline)
-                except SessionExpired:
-                    self._logged_in = False
-                    result = self._recover_and_retry(plan, person_id, deadline)
-                results.append(result)
+            outcomes = self._resolve_pages(
+                plans, deadline, lambda plan, soup: self._answer_plan(plan, soup, person_id, deadline))
+            results = [outcome if isinstance(outcome, PlanResult)
+                       else PlanResult(plan, "unavailable", raw=UNAVAILABLE_TEXT[outcome])
+                       for plan, outcome in outcomes.items()]
+            if not any(r.answered for r in results):
+                raise PlanUnavailable(plans)
 
             outcome = IcopeResult(results)
             self._cache[key] = (self._today(), outcome)
@@ -384,17 +417,73 @@ class HpdcsClient:
                 return
         self._login(deadline)
 
-    def _recover_and_retry(self, plan: str, person_id: str, deadline: float) -> PlanResult:
-        """session 失效：先試共用資料夾裡較新的 cookie，不行再重新登入；各最多一次。"""
+    def _resolve_pages(self, plans: tuple[str, ...], deadline: float, act) -> dict[str, PlanResult | str]:
+        """逐計畫開查詢頁；開不到的頁面分辨是「計畫不存在」還是「session 失效」，復原的每一階整次查詢最多做一次。
+
+        回傳 計畫 → PlanResult（有回答）或頁面種類（missing／home／login = 找不到查詢頁）。
+        階梯（由便宜到貴）：
+          1. 全部先開一輪；HTTP 404 直接判定找不到。
+          2. 只要有任何計畫回答了，其餘開不到的就是找不到（0 額外請求）。
+          3. 都只是被導回首頁：GET Default.aspx 重建 context 再試一次（協定文件一.5）；還是首頁就是找不到。
+          4. 看到登入頁：先沿用共用資料夾裡別台電腦較新的 cookie 再試；那個 session 一定建好 context，
+             再導回首頁就是找不到，不能再登入把對方踢掉。
+          5. 最後才登入一次；登入後仍被導回登入頁才視為 session 一直失效。
+        """
+        outcomes: dict[str, PlanResult | str] = {}
+
+        def attempt(candidates) -> None:
+            for plan in candidates:
+                self._check_deadline(deadline)
+                outcomes[plan] = self._try_plan(plan, deadline, act)
+
+        def pending() -> list[str]:
+            return [plan for plan, outcome in outcomes.items() if outcome in ("home", "login")]
+
+        def answered() -> bool:
+            return any(isinstance(outcome, PlanResult) for outcome in outcomes.values())
+
+        def saw_login() -> bool:
+            return any(outcome == "login" for outcome in outcomes.values())
+
+        attempt(plans)
+        if not pending() or answered():
+            return outcomes
+        session_dead = saw_login()
+        if not session_dead:
+            if self._context_alive(deadline):
+                attempt(pending())
+                if not pending() or answered() or not saw_login():
+                    return outcomes
+            session_dead = True
+        self._logged_in = False
         if self._adopt_cookie_file(require_newer=True):
-            try:
-                return self._check_one_plan(plan, person_id, deadline)
-            except SessionExpired:
-                self._logged_in = False
+            attempt(pending())
+            if not pending() or answered() or not saw_login():
+                return outcomes
         if self._auto_login_disabled:
             raise CredentialError("先前登入失敗已停用自動登入，請到設定重新儲存正確的帳號密碼")
         self._login(deadline)
-        return self._check_one_plan(plan, person_id, deadline)
+        attempt(pending())
+        if not answered() and saw_login():
+            raise SessionExpired("重新登入後查詢頁仍被導回登入頁，session 一直失效")
+        return outcomes
+
+    def _try_plan(self, plan: str, deadline: float, act) -> PlanResult | str:
+        kind, soup = self._fetch_check_page(plan, deadline)
+        if kind != "form":
+            return kind
+        try:
+            return act(plan, soup)
+        except SessionExpired as exc:           # 查詢頁開得了、送出後才被導走：同樣交給階梯分辨
+            return exc.kind
+
+    def _context_alive(self, deadline: float) -> bool:
+        """GET Default.aspx：仍登入中就順便重建 context；看到登入頁代表 session 真的失效了。"""
+        resp = self._http(self._session, "get", DEFAULT_PATH, deadline)
+        status = getattr(resp, "status_code", 200)
+        if status >= 500:
+            raise NetworkError(f"國健署系統回應錯誤（HTTP {status}），請稍後再試")
+        return not self._looks_like_login(BeautifulSoup(resp.text, "html.parser"))
 
     def _login(self, deadline: float) -> None:
         creds = self._safe_credentials()
@@ -514,19 +603,29 @@ class HpdcsClient:
         return result, msg
 
     # ---- 查詢 -----------------------------------------------------------
-    def _check_one_plan(self, plan: str, person_id: str, deadline: float) -> PlanResult:
+    def _fetch_check_page(self, plan: str, deadline: float) -> tuple[str, BeautifulSoup | None]:
+        """開某計畫的查詢頁，回傳（種類, 頁面）：form 可以查；missing 不存在（404）；
+        home 仍登入但被導回沒有表單的首頁（context 沒建立，或這個計畫不存在）；login 被導回登入頁。"""
         if self._session is None:
-            raise SessionExpired("尚未登入")
-        path = CHECK_PATH_TMPL.format(plan=plan)
-        get_resp = self._http(self._session, "get", path, deadline)
-        soup = BeautifulSoup(get_resp.text, "html.parser")
-        if self._looks_like_login(soup) or soup.find(id=TBPID_ID) is None:
-            raise SessionExpired("session 已過期或查詢頁被導回首頁")
+            return "login", None
+        resp = self._http(self._session, "get", CHECK_PATH_TMPL.format(plan=plan), deadline)
+        status = getattr(resp, "status_code", 200)
+        if status in MISSING_STATUSES:
+            return "missing", None
+        if status >= 500:
+            raise NetworkError(f"國健署系統回應錯誤（HTTP {status}），請稍後再試")
+        soup = BeautifulSoup(resp.text, "html.parser")
+        if self._looks_like_login(soup):
+            return "login", soup
+        if soup.find(id=TBPID_ID) is None:
+            return "home", soup
+        return "form", soup
 
+    def _answer_plan(self, plan: str, soup: BeautifulSoup, person_id: str, deadline: float) -> PlanResult:
         form = self._collect_hidden(soup)
         form[TBPID_FIELD] = person_id
         form[CHECK_BTN_FIELD] = CHECK_BTN_VALUE
-        post_resp = self._http(self._session, "post", path, deadline, data=form)
+        post_resp = self._http(self._session, "post", CHECK_PATH_TMPL.format(plan=plan), deadline, data=form)
         return self._parse_result(plan, post_resp.text)
 
     @staticmethod
@@ -549,7 +648,7 @@ class HpdcsClient:
         span = soup.find(id=RESULT_SPAN_ID)
         if span is None:
             if soup.find(id=TBPID_ID) is None:
-                raise SessionExpired("查詢後沒有結果欄位，疑似 session 中途失效")
+                raise SessionExpired("送出後被導回沒有表單的頁面，疑似 context 失效", kind="home")
             raise LayoutChanged("國健署查詢頁的格式改變了，請改用網站查詢")
         text = span.get_text(strip=True)
         if not text:

@@ -143,6 +143,41 @@ def test_query_errors_offer_the_right_next_step(env, qtbot):
     assert "連不上" in page.error_banner._title.text()
 
 
+def test_unavailable_plan_shows_chip_and_caveat(env, qtbot):
+    """新年度只開了正式計畫的頁面：判定照有回答的計畫，找不到的那個用 chip 標出來、說明提醒按重新查詢會再試。"""
+    from PySide6.QtWidgets import QLabel
+
+    from icope_tool.services.hpdcs.client import UNAVAILABLE_TEXT
+    window, _ctx, _store, fake = env
+    page = window.pages["query"]
+    fake.next = IcopeResult([PlanResult("EFA_116", "can_assess", "今年可以繼續評估：O，可以繼續評估！"),
+                             PlanResult("EFA_Pilot_116", "unavailable", raw=UNAVAILABLE_TEXT["home"])])
+    page.id_input.setText("A123456789")
+    page.start_query()
+    qtbot.waitUntil(lambda: not page.querying, timeout=5000)
+    assert "可以進行評估" in page.verdict._title.text()
+    assert "116 年度試辦計畫" in page.verdict._text.text() and "找不到查詢頁" in page.verdict._text.text()
+    assert "重新查詢" in page.verdict._text.text()
+    chips = [w.text() for w in page.result_view.findChildren(QLabel) if w.text() in ("找不到查詢頁", "可以評估")]
+    assert sorted(chips) == ["可以評估", "找不到查詢頁"]
+
+
+def test_all_plans_unavailable_shows_a_clear_error_with_both_actions(env, qtbot):
+    from icope_tool.services.hpdcs.client import PlanUnavailable
+    window, ctx, _store, fake = env
+    page = window.pages["query"]
+    fake.next = PlanUnavailable(("EFA_116", "EFA_Pilot_116"))
+    page.id_input.setText("A123456789")
+    page.start_query()
+    qtbot.waitUntil(lambda: not page.querying, timeout=5000)
+    assert page.result_stack.currentWidget() is page.error_view
+    assert "找不到" in page.error_banner._title.text()
+    assert "EFA_116" in page.error_banner._text.text() and "還沒開放" in page.error_banner._text.text()
+    labels = [b.text().strip() for b in page.error_banner.findChildren(type(page.card_button))]
+    assert "開啟國健署網站" in labels and "前往設定" in labels
+    assert ctx.history[0].result is None and "找不到" in ctx.history[0].error
+
+
 def test_history_row_click_restores_result(env, qtbot):
     window, ctx, *_ = env
     page = window.pages["query"]

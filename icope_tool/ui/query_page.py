@@ -47,6 +47,7 @@ PLAN_STATUS_VIEW = {
     "done": ("info", "已登錄"),
     "done_other": ("info", "已在其他計畫登錄"),
     "blocked": ("warning", "無法評估"),
+    "unavailable": ("neutral", "找不到查詢頁"),
 }
 HISTORY_CHIP = {"can_assess": ("success", "可以評估"), "done": ("info", "今年已做"), "blocked": ("warning", "無法評估")}
 
@@ -57,6 +58,15 @@ def done_verdict_text(result: IcopeResult) -> str:
     if registered:
         return "已登錄於：" + "、".join(registered) + "。不需要重複評估。"
     return "國健署顯示這位長者今年已在其他計畫登錄過評估，不需要重複評估。"
+
+
+def unavailable_note(result: IcopeResult) -> str:
+    """有計畫找不到查詢頁時接在判定說明後面的提醒（今年已做過的不必提：已做就是已做）。"""
+    missing = result.unavailable_plans
+    if not missing or result.verdict == "done":
+        return ""
+    return ("　" + "、".join(p.label for p in missing)
+            + "找不到查詢頁（可能尚未開放），這次沒有查到；按「重新查詢」會再試一次。")
 
 
 def open_hpdcs_site() -> None:
@@ -569,9 +579,9 @@ class QueryPage(QWidget):
         if result.verdict == "done":
             text = done_verdict_text(result)
         elif result.verdict == "blocked":
-            reasons = sorted({p.message for p in result.plans if p.message})
+            reasons = sorted({p.message for p in result.plans if p.answered and p.message})
             text = "國健署系統說明：" + "；".join(reasons) if reasons else "國健署系統顯示今年無法評估。"
-        self.verdict.set_verdict(kind, icon_name, title, text)
+        self.verdict.set_verdict(kind, icon_name, title, text + unavailable_note(result))
 
         clear_layout(self.verdict_actions)
         self.verdict_actions.addWidget(button(
@@ -665,6 +675,10 @@ class QueryPage(QWidget):
                                   on_click=lambda: self.ctx.navigate.emit("settings", "local")))
         elif action == "open_site":
             actions.append(button("開啟國健署網站", "external-link", "primary", on_click=open_hpdcs_site))
+        elif action == "open_site_or_settings":
+            actions.append(button("開啟國健署網站", "external-link", "primary", on_click=open_hpdcs_site))
+            actions.append(button("前往設定", "settings", "ghost",
+                                  on_click=lambda: self.ctx.navigate.emit("settings", "hpdcs")))
         self.error_banner.set_content(kind, title, text, actions)
         self._shown = None
         self.mismatch.hide()

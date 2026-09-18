@@ -5,7 +5,7 @@ from dataclasses import dataclass
 
 from icope_tool.eligibility import ELDER_AGE, INDIGENOUS_AGE, age_in_year
 from icope_tool.services.hpdcs.client import (
-    BusyError, CredentialError, LayoutChanged, NetworkError, PlanConfigError, SessionExpired,
+    BusyError, CredentialError, LayoutChanged, NetworkError, PlanConfigError, PlanUnavailable, SessionExpired,
 )
 from icope_tool.store import StoreError
 
@@ -30,6 +30,11 @@ def describe_query_error(exc: BaseException, credentials_configured: bool) -> Er
         return ErrorView("warning", "驗證碼已失效", str(exc), "retry")
     if isinstance(exc, PlanConfigError):
         return ErrorView("warning", "還沒選擇要查詢的計畫", str(exc), "settings_hpdcs")
+    if isinstance(exc, PlanUnavailable):
+        return ErrorView("warning", "國健署系統找不到這些計畫的查詢頁",
+                         f"目前查不到 {'、'.join(exc.plans)} 的查詢頁面：可能是新年度的計畫還沒開放，或計畫代碼已經改變。"
+                         "請先到國健署網站確認「長者功能評估」目前有哪些計畫；代碼不同時，到「設定 › 國健署帳號」填入自訂計畫代碼。",
+                         "open_site_or_settings")
     if isinstance(exc, NetworkError):
         return ErrorView("danger", "連不上國健署系統",
                          f"{exc}。國健署網站偶爾會維護或回應很慢，可以稍後重試，或先改用網站查詢。", "retry")
