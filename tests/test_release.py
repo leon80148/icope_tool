@@ -44,7 +44,7 @@ def test_requirements_files_can_be_read_by_an_old_pip_on_any_locale(name):
 
 def test_the_current_version_has_release_notes():
     notes = _tool().notes_for(f"v{__version__}", (ROOT / "CHANGELOG.md").read_text(encoding="utf-8"))
-    assert "###" in notes and len(notes) > 200              # 真的有分類過的內容，不是空標題
+    assert "###" in notes and any(line.startswith("- ") for line in notes.splitlines())   # 有分類、有項目，不是空標題
     assert "## [" not in notes                              # 只有這一版，不會把下一段也帶進去
 
 

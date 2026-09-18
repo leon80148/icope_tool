@@ -3,7 +3,7 @@
 格式依照 [Keep a Changelog](https://keepachangelog.com/zh-TW/1.1.0/)，版本號依照[語意化版本](https://semver.org/lang/zh-TW/)。
 每一版的下載檔在 [Releases](https://github.com/leon80148/icope_tool/releases)。
 
-## [Unreleased]
+## [1.1.1] - 2026-09-18
 
 ### 修正
 - 發佈的 zip 改用符合規格的正斜線路徑。1.1.0 的 zip 用 Windows 檔案總管「解壓縮全部」沒有問題，但部分第三方解壓工具會把它解成檔名含反斜線的檔案。

@@ -21,7 +21,7 @@ venv\Scripts\python toolselease_notes.py v<版本>          # 發佈前檢查�
 
 - **這是公開的 repo**：追蹤的檔案、commit 訊息、截圖裡不出現院所名稱、真實帳號或任何真實個資；示範資料一律用「示範診所」與 `A123456789` 這類公認假值；commit 用 GitHub 的 noreply email（repo 層級已設定）。公開的歷史從 1.1.0 的單一 commit 開始；本機的 `backup/*` 與舊的 `feat/*` 分支含公開前的歷史，**不可 push**。
 - 顯示名稱只在 `icope_tool/__init__.py` 的 `APP_DISPLAY_NAME` 定義；`APP_NAME`（`IcopeTool`）是 exe 與 `%LOCALAPPDATA%` 資料夾的名字，不能改。
-- 發佈：版本號改 `__init__.py` 與 `pyproject.toml`、`CHANGELOG.md` 加一段（`tests/test_release.py` 檢查三者一致）→ 推 main、CI 綠 → 想試跑就手動執行 release workflow（不發佈）→ 推 `v<版本>` tag。
+- 發佈：版本號改 `__init__.py` 與 `pyproject.toml`、`CHANGELOG.md` 加一段（`tests/test_release.py` 檢查三者一致）→ 側邊欄會顯示版本號，重產含側邊欄的兩張說明圖（`guide_images.py --only setup-1-checklist`、`--only daily-1-tick-and-apply`）→ 推 main、CI 綠 → 想試跑就手動執行 release workflow（不發佈）→ 推 `v<版本>` tag。打包腳本跑在 Windows PowerShell 5.1，驗證它要用 `powershell.exe -File`，不是 pwsh 7。
 - 外來的檔案都當成不可信任：設定包不採用包內檔名並限制大小；`Material.filename` 只接受單張資料夾內的 PDF 檔名（清單在共用資料夾，會被拿去開啟與刪除）。
 - 國健署密碼不可出現在畫面、log、錯誤訊息、設定包；稽核只記 `pid_tag`（sha256 前 8 碼），不記身分證與姓名。
 - 健保卡的出生日期只拿來在查詢結果旁核對年齡（`eligibility.age_in_year`，以年度計；`ui/messages.describe_age`）：和姓名一樣只存在記憶體（`HistoryEntry.birth_roc`），不進稽核、log 與任何檔案，而且只跟著讀卡當下的身分證走。年齡只是提醒，不改變國健署的判定與能按的按鈕。
