@@ -3,7 +3,7 @@
 格式依照 [Keep a Changelog](https://keepachangelog.com/zh-TW/1.1.0/)，版本號依照[語意化版本](https://semver.org/lang/zh-TW/)。
 每一版的下載檔在 [Releases](https://github.com/leon80148/icope_tool/releases)。
 
-## [Unreleased]
+## [1.2.0] - 2026-09-19
 
 ### 變更
 - **新年度的計畫頁面還沒開放（或代碼命名改了）時，不再被當成登入失效。** 以前每查一次就重新登入一次、還顯示「可能有其他人正用同一個帳號登入」；現在找不到查詢頁的計畫會標成「找不到查詢頁」，判定只看有回答的計畫，全部找不到時說明可能是新年度尚未開放並指引到國健署網站或設定。一次查詢最多只復原一次（先重建 context、再沿用共用 cookie、最後才登入），不會把其他電腦踢下線。
