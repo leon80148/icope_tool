@@ -25,7 +25,7 @@ from icope_tool.services.hpdcs.client import (
     BusyError, CaptchaManualRequired, CredentialError, HpdcsClient, LayoutChanged,
     PlanConfigError, PlanResult,
 )
-from icope_tool.services.hpdcs.plans import parse_custom_plans, plan_codes, plan_label
+from icope_tool.services.hpdcs.plans import PlanCode, parse_custom_plans, plan_codes, plan_label, plans_summary
 
 FIX = Path(__file__).parent / "fixtures" / "hpdcs"
 
@@ -485,6 +485,33 @@ def test_parse_custom_plans_input():
     good, bad = parse_custom_plans("EFA_116, EFA_Pilot_116、壞/代碼")
     assert good == ["EFA_116", "EFA_Pilot_116"]
     assert bad == ["壞/代碼"]
+
+
+def test_plan_code_parse_and_make_round_trip():
+    """命名規則只寫在 PlanCode 一處：解析與組合互為反函式，年份不寫死。"""
+    for kind, year in (("official", 115), ("pilot", 115), ("official", 116), ("pilot", 130)):
+        made = PlanCode.make(kind, year)
+        parsed = PlanCode.parse(made.code)
+        assert (parsed.kind, parsed.year, parsed.code) == (kind, year, made.code)
+    assert PlanCode.make("official", 116).code == "EFA_116" and PlanCode.make("pilot", 116).code == "EFA_Pilot_116"
+    assert PlanCode.parse("EFA_116").label == "116 年度正式計畫" and PlanCode.parse("EFA_116").kind_name == "正式"
+    assert PlanCode.parse("EFA_Pilot_116").label == "116 年度試辦計畫"
+    other = PlanCode.parse("EFA2_116")
+    assert (other.kind, other.year, other.label, other.kind_name) == ("other", None, "EFA2_116", "")
+
+
+def test_plan_codes_are_deduplicated_but_keep_order():
+    prefs = HpdcsPrefs(custom_plans=["EFA_Pilot_120", "EFA_120", "EFA_Pilot_120"])
+    assert plan_codes(prefs, dt.date(2026, 1, 1)) == ("EFA_Pilot_120", "EFA_120")
+
+
+def test_plans_summary():
+    assert plans_summary(("EFA_115", "EFA_Pilot_115")) == " 115 年度正式、試辦計畫"
+    assert plans_summary(("EFA_116",)) == " 116 年度正式計畫"
+    assert plans_summary(()) == "計畫：尚未選擇"
+    assert plans_summary(("EFA_Special_120",)).startswith("計畫：")
+    assert plans_summary(("EFA2_116",)).startswith("計畫：")
+    assert plans_summary(("EFA_115", "EFA_Pilot_116")).startswith("計畫：")     # 混了兩個年度就逐一列出
 
 
 # ---------------------------------------------------------------------------

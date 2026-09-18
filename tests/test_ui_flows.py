@@ -11,7 +11,6 @@ from icope_tool.models import Resource
 from icope_tool.services.hpdcs.client import CredentialError, IcopeResult, NetworkError, PlanResult
 from icope_tool.store import DataStore, LocalConfigStore
 from icope_tool.ui.context import AppContext, HistoryEntry
-from icope_tool.ui.query_page import plans_summary
 from tests.test_store import make_pdf
 
 
@@ -92,13 +91,6 @@ def env(tmp_path, qtbot):
     window.resize(1366, 768)
     window.show()
     return window, ctx, store, fake
-
-
-def test_plans_summary():
-    assert plans_summary(("EFA_115", "EFA_Pilot_115")) == " 115 年度正式、試辦計畫"
-    assert plans_summary(("EFA_115",)) == " 115 年度正式計畫"
-    assert plans_summary(()) == "計畫：尚未選擇"
-    assert plans_summary(("EFA_Special_120",)).startswith("計畫：")
 
 
 def test_sidebar_spells_the_display_name(env):

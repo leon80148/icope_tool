@@ -16,7 +16,7 @@ from PySide6.QtWidgets import (
 from icope_tool.audit import pid_tag
 from icope_tool.idcheck import check_person_id, mask_person_id
 from icope_tool.services.hpdcs.client import SITE_URL, CaptchaManualRequired, IcopeResult, QueryCancelled
-from icope_tool.services.hpdcs.plans import plan_label
+from icope_tool.services.hpdcs.plans import plans_summary
 from icope_tool.ui.context import HISTORY_LIMIT, AppContext, HistoryEntry
 from icope_tool.ui.dialogs.captcha import CaptchaDialog
 from icope_tool.ui.messages import CARD_HINTS, describe_age, describe_query_error
@@ -49,26 +49,6 @@ PLAN_STATUS_VIEW = {
     "blocked": ("warning", "無法評估"),
 }
 HISTORY_CHIP = {"can_assess": ("success", "可以評估"), "done": ("info", "今年已做"), "blocked": ("warning", "無法評估")}
-
-
-def plans_summary(plans: tuple[str, ...]) -> str:
-    """('EFA_115', 'EFA_Pilot_115') → 115 年度正式、試辦計畫。"""
-    if not plans:
-        return "計畫：尚未選擇"
-    fallback = "計畫：" + "、".join(plan_label(p) for p in plans)
-    kinds, years = [], set()
-    for plan in plans:
-        parts = plan.split("_")
-        if len(parts) == 2 and parts[0] == "EFA" and parts[1].isdigit():
-            kinds.append("正式")
-        elif len(parts) == 3 and parts[:2] == ["EFA", "Pilot"] and parts[2].isdigit():
-            kinds.append("試辦")
-        else:
-            return fallback
-        years.add(parts[-1])
-    if len(years) != 1:
-        return fallback
-    return f" {years.pop()} 年度{'、'.join(kinds)}計畫"
 
 
 def done_verdict_text(result: IcopeResult) -> str:
