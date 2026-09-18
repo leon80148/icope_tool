@@ -161,6 +161,10 @@ class AppContext(QObject):
         except StoreError:
             return HpdcsPrefs()
 
+    def today(self) -> date:
+        """注入的時鐘：計畫年度、查詢紀錄是否過期、畫面上的年度標籤都用它，測試才能把日期撥到明年。"""
+        return self._today()
+
     def active_plans(self) -> tuple[str, ...]:
         return plan_codes(self.hpdcs_prefs(), self._today())
 

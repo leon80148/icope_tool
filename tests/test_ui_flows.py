@@ -243,6 +243,26 @@ def test_clinic_tab_saves(env, qtbot):
     assert not tab.has_unsaved_changes()
 
 
+def test_hpdcs_tab_labels_follow_the_injected_clock(env, qtbot):
+    """勾選標籤與提示文字用注入的時鐘算年度，而且每次載入都重算：程式跨年開著不關也會換成新年度。"""
+    from datetime import date
+
+    from PySide6.QtWidgets import QWidget
+
+    from icope_tool.ui.settings.hpdcs_tab import HpdcsTab
+    from icope_tool.ui.widgets import Toast
+    window, ctx, store, fake = env
+    future = AppContext(ctx.local_store, store.root, ctx.audit, hpdcs_factory=lambda _c: fake,
+                        today_fn=lambda: date(2027, 1, 1))
+    holder = QWidget()
+    qtbot.addWidget(holder)
+    tab = HpdcsTab(future, Toast(holder), holder)
+    assert "EFA_116" in tab.official.text() and "116 年度正式計畫" in tab.official.text()
+    assert "EFA_Pilot_116" in tab.pilot.text()
+    assert "EFA_116" in tab.custom.placeholderText() and "EFA_117" not in tab.custom.placeholderText()
+    assert future.today() == date(2027, 1, 1)
+
+
 def test_hpdcs_tab_requires_a_plan(env, qtbot):
     window, _ctx, store, _fake = env
     tab = window.pages["settings"].pages["hpdcs"]
