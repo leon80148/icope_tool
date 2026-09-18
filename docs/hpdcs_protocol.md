@@ -58,6 +58,8 @@ postback，而是 jQuery `Login()` 函式送出 AJAX：
 | `EFA_115` | 115 年度 | **今年（2026）** |
 | `EFA_Pilot_115` | 115 年度**試辦計畫** | **今年（2026）** |
 
+（以 115 為例。程式依今天的民國年推導 `EFA_{年}`／`EFA_Pilot_{年}`，命名規則只寫在 `services/hpdcs/plans.py` 的 `PlanCode`。）
+
 > **「今年是否做過」需同時查 `EFA_115` 與 `EFA_Pilot_115` 兩頁**；任一頁「已被登錄」即算今年已做。
 > （側錄時該診所同時參與這兩個計畫；實際要查哪些計畫在「設定 › 國健署帳號」選擇。）
 
@@ -68,6 +70,11 @@ postback，而是 jQuery `Login()` 函式送出 AJAX：
 - 必帶 hidden：`__EVENTTARGET __EVENTARGUMENT __VIEWSTATE __VIEWSTATEGENERATOR`
   `__VIEWSTATEENCRYPTED __EVENTVALIDATION ctl00$HFcsrf ctl00$ContentPlaceHolder1$HFPID`
   `ctl00$ContentPlaceHolder1$HFOrgCode ...`（後端做法：GET 後抓**所有** `input[type=hidden]` 一併回送）
+
+> **查詢頁 GET 回來沒有表單、但仍是登入中的首頁**，有兩種可能：context 沒建立（一.5），或這個計畫的頁面不存在
+> （新年度尚未開放、代碼命名改了）。client 用一個階梯分辨（HTTP 404 直接判定不存在；其他計畫有回答就視為不存在；
+> 否則 GET 一次 Default.aspx 重建 context 再試；看到登入頁才沿用共用 cookie、最後才登入一次），
+> 找不到的計畫以 `unavailable` 回報，全部找不到才丟 `PlanUnavailable`。國健署對不存在頁面的實際回應**尚未側錄**，見第四節。
 
 ### 後端查詢流程（單一年度頁）
 1. `GET .../EFA_{PLAN}/EF2_CheckIDExist.aspx` → bs4 解析所有 hidden input
@@ -111,3 +118,22 @@ postback，而是 jQuery `Login()` 函式送出 AJAX：
 - session 重用：登入一次（30 分內）可連續查詢；逾時→自動重登一次
 - 憑證：存在資料存放位置的 `auth/`（由程式注入路徑，不讀環境變數）；驗證碼 ddddocr 自動辨識，多次失敗→把驗證碼圖交給使用者人工輸入
 - cookie：requests.Session 自動管理（HttpOnly session + F5 `TS*`）
+
+---
+
+## 四、每年 1 月的檢查清單（新年度）
+
+1. **程式不用改**：計畫代碼由 `plans.py` 的 `PlanCode` 依民國年推導，1 月 1 日自動變成新年度；設定頁的標籤也會跟著換。
+   還沒有側錄過的是：國健署何時開放新年度的頁面、不存在的頁面長什麼樣。
+2. **1 月第一個上班日**：用瀏覽器登入 hpdcs，左側選單「長者功能評估」→「新增ICOPE評估資料」→「個案身分證檢核」，
+   記下實際的 URL（`EFA_116`？`EFA_Pilot_116`？還有別的計畫？）。把選單那段 HTML 去識別化存成 `tests/fixtures/hpdcs/menu.html`
+   （將來要做「自動偵測可用計畫」就靠它）。
+3. **在程式裡查一位長者**：正常就結束。若顯示「國健署系統找不到這些計畫的查詢頁」或某個計畫是「找不到查詢頁」：
+   用瀏覽器開該 URL，按 F12 → Network 記下 **HTTP 狀態碼、是否 302 與導向目標（query 是否含 `aspxerrorpath=`）、
+   最終頁的 `<title>`、頁面是否含 `#username`／`#IMGValidate`／`#ContentPlaceHolder1_TBPID`**；
+   去識別化存成 `tests/fixtures/hpdcs/plan_missing_<mode>.html`，對照 `client._fetch_check_page` 的分類與
+   `tests/test_hpdcs_client.py` 的 `FakeSession(unknown_plans=...)` 三種模式（404／導回首頁／導回登入頁），不符就修分類。
+   特別是「導回登入頁」：目前分不出缺頁與 session 失效，最多重登一次就放棄。
+4. **命名改了**（例如不再叫 `EFA_`）：先在「設定 › 國健署帳號 › 進階：自訂計畫代碼」填新代碼讓診所能查，再改 `PlanCode._TEMPLATES` 發新版。
+5. **去年的頁面 1 月仍在**（`EFA_115` 在 2027 年還能開），不能拿它當「今年」；`done_this_year` 只看今年度的計畫。
+
